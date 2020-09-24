@@ -12,7 +12,7 @@
 	<atom:link href="https://neberhardt123.github.io/nathanspage/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Thu, 24 Sep 2020 23:33:29 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 24 Sep 2020 23:39:39 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -282,7 +282,7 @@ Get-ADGroupMember [Group]
 Get-ADGroupMember &quot;Domain Admins&quot;
 </pre>
 
-<pre class="brush: plain; class-name: &#039;get-adcomputer&#039;; title: ; notranslate">
+<pre class="brush: plain; title: ; notranslate">
 Get-ADComputer [Computer]
 </pre>
 
@@ -290,7 +290,7 @@ Get-ADComputer [Computer]
 <p>Get info about domain computers or a specified computer. Example (Find computers that are running RDP service):</p>
 
 
-<pre class="brush: plain; title: ; notranslate">
+<pre class="brush: plain; class-name: &#039;get-adcomputer&#039;; title: ; notranslate">
  Get-ADComputer -Filter {ServicePrincipalName -like “*TERMSRV*”}
 </pre>
 

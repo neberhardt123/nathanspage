@@ -82,6 +82,9 @@ body.custom-background { background-color: #c9c9c9; }
 .wmic-group, .net-groupcss, .icacls-group, .netsh-group, .get-adcomputer {
 	padding-left:25px;
 }
+.get-adcomputer {
+	margin-left:30px;
+}
 
 
 		</style>
@@ -150,7 +153,7 @@ body.custom-background { background-color: #c9c9c9; }
 	<header class="entry-header">
 		<h1 class="entry-title">Using CMD and PowerShell for Windows Reconnaissance</h1>
 		<div class="entry-info">
-			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-09-24T23:33:29+00:00">September 24, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">user</a></span>		</div>
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-09-24T23:39:39+00:00">September 24, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">user</a></span>		</div>
 	</header>
 
 	
@@ -399,7 +402,7 @@ Get-ADGroupMember [Group]
 Get-ADGroupMember &quot;Domain Admins&quot;
 </pre>
 
-<pre class="brush: plain; class-name: &#039;get-adcomputer&#039;; title: ; notranslate" title="">
+<pre class="brush: plain; title: ; notranslate" title="">
 Get-ADComputer [Computer]
 </pre>
 
@@ -407,7 +410,7 @@ Get-ADComputer [Computer]
 <p>Get info about domain computers or a specified computer. Example (Find computers that are running RDP service):</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
+<pre class="brush: plain; class-name: &#039;get-adcomputer&#039;; title: ; notranslate" title="">
  Get-ADComputer -Filter {ServicePrincipalName -like “*TERMSRV*”}
 </pre>
 
