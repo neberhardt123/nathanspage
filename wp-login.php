@@ -12,7 +12,11 @@
 	<meta name='robots' content='noindex,noarchive' />
 	<meta name='referrer' content='strict-origin-when-cross-origin' />
 		<meta name="viewport" content="width=device-width" />
-		</head>
+	<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-270x270.jpg" />
+	</head>
 	<body class="login no-js login-action-login wp-core-ui  locale-en-us">
 	<script type="text/javascript">
 		document.body.className = document.body.className.replace('no-js','js');
@@ -38,7 +42,7 @@
 						<p class="forgetmenot"><input name="rememberme" type="checkbox" id="rememberme" value="forever"  /> <label for="rememberme">Remember Me</label></p>
 			<p class="submit">
 				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In" />
-									<input type="hidden" name="redirect_to" value="https://neberhardt123.github.io/nathanspage/wp-admin/" />
+									<input type="hidden" name="redirect_to" value="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php" />
 									<input type="hidden" name="testcookie" value="1" />
 			</p>
 		</form>

@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en-US">
+<head class="no-js">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+	        <link rel="pingback" href="https://neberhardt123.github.io/nathanspage/xmlrpc.php">
+	    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Using CMD and PowerShell for Windows Reconnaissance &#8211; Nathan Eberhardt</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Feed" href="https://neberhardt123.github.io/nathanspage/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Comments Feed" href="https://neberhardt123.github.io/nathanspage/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Using CMD and PowerShell for Windows Reconnaissance Comments Feed" href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/neberhardt123.github.io\/nathanspage\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://neberhardt123.github.io/nathanspage/wp-includes/css/dist/block-library/style.min.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='thesimplest-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600%2C700%2C800%7CPT+Serif%3A400%2C400i%2C700%2C700i&#038;ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://neberhardt123.github.io/nathanspage/wp-content/themes/thesimplest/assets/css/bootstrap.min.css?ver=3.3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://neberhardt123.github.io/nathanspage/wp-content/themes/thesimplest/assets/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='thesimplest-style-css'  href='https://neberhardt123.github.io/nathanspage/wp-content/themes/thesimplest/style.css?ver=5.5.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<link rel="https://api.w.org/" href="https://neberhardt123.github.io/nathanspage/wp-json/" /><link rel="alternate" type="application/json" href="https://neberhardt123.github.io/nathanspage/wp-json/wp/v2/posts/14" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://neberhardt123.github.io/nathanspage/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://neberhardt123.github.io/nathanspage/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Hello world!' href='https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/' />
+<meta name="generator" content="WordPress 5.5.1" />
+<link rel="canonical" href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/" />
+<link rel='shortlink' href='https://neberhardt123.github.io/nathanspage/?p=14' />
+<link rel="alternate" type="application/json+oembed" href="https://neberhardt123.github.io/nathanspage/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneberhardt123.github.io%2Fnathanspage%2F2020%2F09%2F24%2Fwindows-reconnaissance-guide%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://neberhardt123.github.io/nathanspage/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneberhardt123.github.io%2Fnathanspage%2F2020%2F09%2F24%2Fwindows-reconnaissance-guide%2F&#038;format=xml" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #c9c9c9; }
+</style>
+	<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			/* change SyntaxHighlighter plugins styles */
+    /* font-size */
+    .syntaxhighlighter a,
+    .syntaxhighlighter div,
+    .syntaxhighlighter code,
+    .syntaxhighlighter table,
+    .syntaxhighlighter table td,
+    .syntaxhighlighter table tr,
+    .syntaxhighlighter table tbody,
+    .syntaxhighlighter table thead,
+    .syntaxhighlighter table caption,
+    .syntaxhighlighter textarea {
+        font-size: 14px !important;
+    }
+    /* top and bottom padding in code box */
+    .syntaxhighlighter {
+        padding: 1em 1em 1em 1em !important;
+    }
+    /* increaes line number and code line height */
+    .syntaxhighlighter table td.gutter .line {
+        padding: 3px 0.5em 3px 1em !important;
+    }
+    .syntaxhighlighter table td.code .line {
+        padding: 3px 1em !important;
+    }
+
+.wmic-group, .net-groupcss, .icacls-group, .netsh-group, .get-adcomputer {
+	padding-left:25px;
+}
+
+
+		</style>
+		
+</head>
+<body class="post-template-default single single-post postid-14 single-format-standard custom-background">
+    <div class="search-popup">
+        <span class="search-popup-close"><i class="fa fa-times"></i></span>
+        
+<form action="https://neberhardt123.github.io/nathanspage/" method="get" role="search" id="searchform_topbar" class="search-top-bar-popup search-form">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field-top-bar" id="search-field-top-bar" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit search-top-bar-submit" id="search-top-bar-submit">
+        <span class="fa fa-search header-search-icon"></span>
+        <span class="screen-reader-text">
+            Search        </span>
+    </button>
+</form>
+    </div><!-- .search-popup -->
+
+<div id="page" class="site">
+    <div class="site-inner">
+        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+        <header id="masthead" class="site-header" role="banner">
+
+        
+        <div class="site-header-main">
+            <div class="site-branding">
+                                    <p class="site-title">
+                        <a href="https://neberhardt123.github.io/nathanspage/" rel="home">
+                            Nathan Eberhardt                        </a>
+                    </p>
+                                    <p class="site-description">InfoSec Blogs</p>
+                
+            </div><!-- .site-branding -->
+
+                        <div class="menu-wrapper">
+                <button id="menu-toggle" class="menu-toggle toggled-on" aria-expanded="true" aria-controls="site-navigation social-navigation">Menu</button>
+                <div id="site-header-menu" class="site-header-menu clearfix">
+
+                        <nav id="site-navigation" class="main-navigation container" role="navigation" aria-label="Primary Menu">
+				            <div class="menu-navbar-container"><ul id="menu-navbar" class="primary-menu"><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-10"><a href="https://neberhardt123.github.io/nathanspage">Home</a></li>
+<li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-11"><a href="https://neberhardt123.github.io/nathanspage/blogs/">Blogs</a></li>
+<li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-13"><a href="https://neberhardt123.github.io/nathanspage/">Sample Page</a></li>
+</ul></div>                        </nav><!-- .main-navigation -->
+                </div><!-- .site-header-menu -->
+            </div><!-- .menu-wrapper -->
+            
+        </div><!-- .site-header-main -->
+
+
+    
+</header>
+
+        <div id="content" class="site-content container">
+
+	<div id="primary" class="content-area row">
+		<main id="main" class="site-main col-md-8 col-sm-12" role="main">
+
+			
+<article id="post-14" class="post-14 post type-post status-publish format-standard hentry category-uncategorized">
+
+	<header class="entry-header">
+		<h1 class="entry-title">Using CMD and PowerShell for Windows Reconnaissance</h1>
+		<div class="entry-info">
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-09-24T23:33:29+00:00">September 24, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">user</a></span>		</div>
+	</header>
+
+	
+	<div class="entry-content">
+		
+<p>This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network. </p>
+
+
+
+<span id="more-14"></span>
+
+
+
+<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide is primarily focussed on Windows Server, but much of this information still applies to workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
+
+
+
+<h2>Starting off</h2>
+
+
+
+<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Systeminfo 
+</pre>
+
+
+<p>Displays detailed information and configurations of the computer and operating system.</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Wmic
+</pre>
+
+
+<p>The wmic command provides a command line interface for Windows Instrumentation. Wmic will also not be logged by default audit policies and event logs. There’s a lot of info you can extract with this command, and some cool things you can do with it as well. Here are a few examples:</p>
+
+
+
+<div class="wp-block-group wmic-group has-white-background-color has-background"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
+wmic /output:c:os.html os get /format:hform
+</pre>
+
+
+<p>Generates an OS/system report in HTML</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+wmic logicaldisk where drivetype=3 get name, freespace, systemname, filesystem, size, volumeserialnumber
+</pre>
+
+
+<p>Displays Hardrive info</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+wmic STARTUP GET Caption, Command, User
+</pre>
+
+
+<p>Finds programs/scripts that start on boot</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+wmic [useraccount/group/services] list
+</pre>
+
+
+<p>&nbsp;Gets info about users/groups/services</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Wmic qfe
+</pre>
+
+
+<p>Gets a list of updates on the windows machine</p>
+</div></div>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Net
+</pre>
+
+
+<p>The net command manages many aspects of the network settings on a windows machine. Some uses:</p>
+
+
+
+<div class="wp-block-group net-groupcss has-white-background-color has-background"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
+Net [user/group]
+</pre>
+
+
+<p>Lists all local and domain users/groups</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Net file
+</pre>
+
+
+<p>Shows a list of open files on a server</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Net share
+</pre>
+
+
+<p>Lists/manages shared resources on the machine</p>
+</div></div>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+qwinsta
+</pre>
+
+
+<p>Displays any users currently logged on. The “query session” command performs the same task.</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Cmdkey /list
+</pre>
+
+
+<p>displays a list of all user names and credentials that are stored in credential manager<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Icacls [path]
+</pre>
+
+
+<div class="wp-block-group icacls-group"><div class="wp-block-group__inner-container">
+<p>Gets permissions of the specified directory/file. Permissions are represented as uppercase letters in the output. Here is a quick overview of some of the permissions you will see:</p>
+
+
+
+<p><strong>Simple rights:</strong></p>
+
+
+
+<ul><li><strong>F</strong> (full access)</li><li><strong>M</strong> (modify access)</li><li><strong>RX</strong> (read and execute access)</li><li><strong>R</strong> (read-only access)</li><li><strong>W</strong> (write-only access)</li></ul>
+
+
+
+<p><strong>Inherited Rights (apply only to directories):</strong></p>
+
+
+
+<ul><li><strong>(OI)</strong>: object inherit</li><li><strong>(CI)</strong>: container inherit</li><li><strong>(IO)</strong>: inherit only</li><li><strong>(NP)</strong>: do not propagate inherit</li><li><strong>(I)</strong>: permission inherited from parent container</li></ul>
+
+
+
+<p>There are a list of other specific rights you can view on the microsoft docs. <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753525(v=ws.10)?redirectedfrom=MSDN" target="_blank">https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753525(v=ws.10)?redirectedfrom=MSDN</a></p>
+
+
+
+<p>The output can be verbose, so you can pipe the command into filters. Example:</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+icacls &quot;C:\Program Files\*&quot; | findstr &quot;(F)&quot; | findstr &quot;Everyone&quot;
+</pre>
+
+
+<p>This narrows down your search by piping the command into &#8220;findstr&#8221;, which filters the output to &#8220;Full&#8221; Permissions and the &#8220;Everyone&#8221; Group.</p>
+</div></div>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+schtasks /query
+</pre>
+
+
+<p>Looks for any scheduled tasks running on the machine.</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+netsh
+</pre>
+
+
+<div class="wp-block-group netsh-group"><div class="wp-block-group__inner-container">
+<p>Network shell (netsh) is a command-line utility that allows you to configure and display the status of various network communications. I&#8217;ll only be going over a few examples of what you can do with this tool.</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+netsh interface ip show config
+</pre>
+
+
+<p>Displays configurations for your network interfaces</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+netsh advfirewall firewall export &lt;path&gt;
+</pre>
+
+
+<p>Grabs firewall settings on the machine and exports to a file</p>
+</div></div>
+
+
+
+<h2>Domain Recon with PowerShell</h2>
+
+
+
+<hr class="wp-block-separator is-style-wide"/>
+
+
+
+<p>There is a lot of useful domain information you can collect with powershell cmdlets</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Get-ADDomain [Server]
+</pre>
+
+
+<p>Gets info about the domain</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Get-ADGroup [Group]
+</pre>
+
+
+<p>Gets info about the domain groups or specified.</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Get-ADGroupMember [Group]
+</pre>
+
+
+<p>Gets info about the members of a Domain Group. Example (Getting list of Domain Admins):</p>
+
+
+<pre class="brush: plain; class-name: &#039;domain-adminsec&#039;; title: ; notranslate" title="">
+Get-ADGroupMember &quot;Domain Admins&quot;
+</pre>
+
+<pre class="brush: plain; class-name: &#039;get-adcomputer&#039;; title: ; notranslate" title="">
+Get-ADComputer [Computer]
+</pre>
+
+
+<p>Get info about domain computers or a specified computer. Example (Find computers that are running RDP service):</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+ Get-ADComputer -Filter {ServicePrincipalName -like “*TERMSRV*”}
+</pre>
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Get-ADUser
+</pre>
+
+
+<p>Get info about domain users or a specified Domain user. Example (</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Get-GPO
+</pre>
+
+
+<p>Gets info about Group Policy Objects on the domain</p>
+
+
+
+<p>To take this a step further, you can use a powershell platform called powersploit, which is used for privilege escalation and reconnaissance of a Domain Controller. Here are some powersploit cmdlets you can use for recon.</p>
+
+
+
+<h1><strong>Get-DomainDNSZone</strong></h1>
+
+
+
+<p>Enumerates the Active Directory DNS zones for a given domain</p>
+
+
+
+<p>Get-NetGPOGroup</p>
+
+
+
+<p>gets all GPOs in a domain that set &#8220;Restricted Groups&#8221;&nbsp;</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>on</strong> <strong>on</strong> <strong>target</strong> <strong>machines</strong></p>
+
+
+
+<p><strong>Invoke-UserHunter&nbsp;</strong></p>
+
+
+
+<p><strong>finds machines on the local domain where specified users are logged into, and can check if the current user has local admin access to found machines</strong></p>
+
+
+
+<p><strong>Invoke-FileFinder – This command finds sensitive files on hosts by traversing shared folders looking for specified search criteria.</strong></p>
+
+
+
+<p><strong>Find-InterestingFile&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8211;&nbsp;&nbsp;&nbsp;</strong></p>
+
+
+
+<p><strong>search a local or remote path for files with specific terms in the name</strong></p>
+
+
+
+<p><strong>Invoke-UserEventHunter&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8211; &nbsp; hunts for user logon events in domain controller event logs</strong></p>
+
+
+
+<p><strong>For more details on powersploit: https://powersploit.readthedocs.io/en/stable/Recon/README/</strong></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer clearfix"><span class="cat-tags-links"><span class="cat-links"><span class="cat-icon"><i class="fa fa-folder-open"></i></span><span class="screen-reader-text">Categories</span><a href="https://neberhardt123.github.io/nathanspage/category/uncategorized/" rel="category tag">Uncategorized</a></span></span></footer></article>
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">Hello world!</span></a></div></div>
+	</nav>
+<div id="comments" class="comments-area">
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://neberhardt123.github.io/nathanspage/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='14' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	
+</div><!-- .comments-area -->
+		</main><!-- .site-main -->
+		
+<aside id="secondary" class="sidebar widget-area col-md-4 col-sm-12" role="complementary">
+	
+		<section id="recent-posts-2" class="widget widget_recent_entries">
+		<h4 class="widget-title">Recent Posts</h4>
+		<ul>
+											<li>
+					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/" aria-current="page">Using CMD and PowerShell for Windows Reconnaissance</a>
+									</li>
+											<li>
+					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/">Hello world!</a>
+									</li>
+					</ul>
+
+		</section><section id="archives-2" class="widget widget_archive"><h4 class="widget-title">Archives</h4>
+			<ul>
+					<li><a href='https://neberhardt123.github.io/nathanspage/2020/09/'>September 2020</a></li>
+			</ul>
+
+			</section><section id="categories-2" class="widget widget_categories"><h4 class="widget-title">Categories</h4>
+			<ul>
+					<li class="cat-item cat-item-1"><a href="https://neberhardt123.github.io/nathanspage/category/uncategorized/">Uncategorized</a>
+</li>
+			</ul>
+
+			</section></aside><!-- .sidebar .widget-area -->
+	</div><!-- content-area -->
+
+        </div><!-- .site-content -->
+        
+                <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info container">
+                            <a href="https://wordpress.org/">Proudly powered by WordPress</a>
+            </div>
+        </footer>
+        
+    </div><!-- site-inner -->
+</div><!-- site -->
+
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b' id='syntaxhighlighter-core-js'></script>
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b' id='syntaxhighlighter-brush-plain-js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://neberhardt123.github.io/nathanspage/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = "https://neberhardt123.github.io/nathanspage/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeRDark.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['light'] = true;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-content/themes/thesimplest/assets/js/skip-link-focus-fix.js?ver=1.0' id='skip-link-focus-fix-js'></script>
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-content/themes/thesimplest/assets/js/bootstrap.min.js?ver=3.3.7' id='jquery-bootstrap-js'></script>
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-includes/js/comment-reply.min.js?ver=5.5.1' id='comment-reply-js'></script>
+<script type='text/javascript' id='thesimplest-main-js-js-extra'>
+/* <![CDATA[ */
+var thesimplest_screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-content/themes/thesimplest/assets/js/main.js?ver=1.0' id='thesimplest-main-js-js'></script>
+<script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-includes/js/wp-embed.min.js?ver=5.5.1' id='wp-embed-js'></script>
+</body>
+</html>

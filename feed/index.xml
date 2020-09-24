@@ -11,25 +11,379 @@
 	<title>Nathan Eberhardt</title>
 	<atom:link href="https://neberhardt123.github.io/nathanspage/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
-	<description>Info Sec Blogs</description>
-	<lastBuildDate>Thu, 24 Sep 2020 08:22:50 +0000</lastBuildDate>
+	<description>InfoSec Blogs</description>
+	<lastBuildDate>Thu, 24 Sep 2020 23:33:29 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.5.1</generator>
+
+<image>
+	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-32x32.jpg</url>
+	<title>Nathan Eberhardt</title>
+	<link>https://neberhardt123.github.io/nathanspage</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
 	<item>
-		<title>asd</title>
-		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/asd/</link>
+		<title>Using CMD and PowerShell for Windows Reconnaissance</title>
+		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/</link>
+					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/#respond</comments>
 		
 		<dc:creator><![CDATA[user]]></dc:creator>
-		<pubDate>Thu, 24 Sep 2020 08:00:09 +0000</pubDate>
+		<pubDate>Thu, 24 Sep 2020 20:07:26 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=21</guid>
+		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=14</guid>
 
-					<description><![CDATA[This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this: Hi there! I’m a bike messenger...]]></description>
+					<description><![CDATA[This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network. The...]]></description>
+										<content:encoded><![CDATA[
+<p>This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network. </p>
+
+
+
+<span id="more-14"></span>
+
+
+
+<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide is primarily focussed on Windows Server, but much of this information still applies to workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
+
+
+
+<h2>Starting off</h2>
+
+
+
+<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Systeminfo 
+</pre>
+
+
+<p>Displays detailed information and configurations of the computer and operating system.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Wmic
+</pre>
+
+
+<p>The wmic command provides a command line interface for Windows Instrumentation. Wmic will also not be logged by default audit policies and event logs. There’s a lot of info you can extract with this command, and some cool things you can do with it as well. Here are a few examples:</p>
+
+
+
+<div class="wp-block-group wmic-group has-white-background-color has-background"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
+wmic /output:c:os.html os get /format:hform
+</pre>
+
+
+<p>Generates an OS/system report in HTML</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+wmic logicaldisk where drivetype=3 get name, freespace, systemname, filesystem, size, volumeserialnumber
+</pre>
+
+
+<p>Displays Hardrive info</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+wmic STARTUP GET Caption, Command, User
+</pre>
+
+
+<p>Finds programs/scripts that start on boot</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+wmic [useraccount/group/services] list
+</pre>
+
+
+<p>&nbsp;Gets info about users/groups/services</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Wmic qfe
+</pre>
+
+
+<p>Gets a list of updates on the windows machine</p>
+</div></div>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Net
+</pre>
+
+
+<p>The net command manages many aspects of the network settings on a windows machine. Some uses:</p>
+
+
+
+<div class="wp-block-group net-groupcss has-white-background-color has-background"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
+Net [user/group]
+</pre>
+
+
+<p>Lists all local and domain users/groups</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Net file
+</pre>
+
+
+<p>Shows a list of open files on a server</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Net share
+</pre>
+
+
+<p>Lists/manages shared resources on the machine</p>
+</div></div>
+
+
+<pre class="brush: plain; title: ; notranslate">
+qwinsta
+</pre>
+
+
+<p>Displays any users currently logged on. The “query session” command performs the same task.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Cmdkey /list
+</pre>
+
+
+<p>displays a list of all user names and credentials that are stored in credential manager<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Icacls [path]
+</pre>
+
+
+<div class="wp-block-group icacls-group"><div class="wp-block-group__inner-container">
+<p>Gets permissions of the specified directory/file. Permissions are represented as uppercase letters in the output. Here is a quick overview of some of the permissions you will see:</p>
+
+
+
+<p><strong>Simple rights:</strong></p>
+
+
+
+<ul><li><strong>F</strong> (full access)</li><li><strong>M</strong> (modify access)</li><li><strong>RX</strong> (read and execute access)</li><li><strong>R</strong> (read-only access)</li><li><strong>W</strong> (write-only access)</li></ul>
+
+
+
+<p><strong>Inherited Rights (apply only to directories):</strong></p>
+
+
+
+<ul><li><strong>(OI)</strong>: object inherit</li><li><strong>(CI)</strong>: container inherit</li><li><strong>(IO)</strong>: inherit only</li><li><strong>(NP)</strong>: do not propagate inherit</li><li><strong>(I)</strong>: permission inherited from parent container</li></ul>
+
+
+
+<p>There are a list of other specific rights you can view on the microsoft docs. <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753525(v=ws.10)?redirectedfrom=MSDN" target="_blank">https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753525(v=ws.10)?redirectedfrom=MSDN</a></p>
+
+
+
+<p>The output can be verbose, so you can pipe the command into filters. Example:</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+icacls &quot;C:\Program Files\*&quot; | findstr &quot;(F)&quot; | findstr &quot;Everyone&quot;
+</pre>
+
+
+<p>This narrows down your search by piping the command into &#8220;findstr&#8221;, which filters the output to &#8220;Full&#8221; Permissions and the &#8220;Everyone&#8221; Group.</p>
+</div></div>
+
+
+<pre class="brush: plain; title: ; notranslate">
+schtasks /query
+</pre>
+
+
+<p>Looks for any scheduled tasks running on the machine.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+netsh
+</pre>
+
+
+<div class="wp-block-group netsh-group"><div class="wp-block-group__inner-container">
+<p>Network shell (netsh) is a command-line utility that allows you to configure and display the status of various network communications. I&#8217;ll only be going over a few examples of what you can do with this tool.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+netsh interface ip show config
+</pre>
+
+
+<p>Displays configurations for your network interfaces</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+netsh advfirewall firewall export &lt;path&gt;
+</pre>
+
+
+<p>Grabs firewall settings on the machine and exports to a file</p>
+</div></div>
+
+
+
+<h2>Domain Recon with PowerShell</h2>
+
+
+
+<hr class="wp-block-separator is-style-wide"/>
+
+
+
+<p>There is a lot of useful domain information you can collect with powershell cmdlets</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Get-ADDomain [Server]
+</pre>
+
+
+<p>Gets info about the domain</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Get-ADGroup [Group]
+</pre>
+
+
+<p>Gets info about the domain groups or specified.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Get-ADGroupMember [Group]
+</pre>
+
+
+<p>Gets info about the members of a Domain Group. Example (Getting list of Domain Admins):</p>
+
+
+<pre class="brush: plain; class-name: &#039;domain-adminsec&#039;; title: ; notranslate">
+Get-ADGroupMember &quot;Domain Admins&quot;
+</pre>
+
+<pre class="brush: plain; class-name: &#039;get-adcomputer&#039;; title: ; notranslate">
+Get-ADComputer [Computer]
+</pre>
+
+
+<p>Get info about domain computers or a specified computer. Example (Find computers that are running RDP service):</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+ Get-ADComputer -Filter {ServicePrincipalName -like “*TERMSRV*”}
+</pre>
+
+<pre class="brush: plain; title: ; notranslate">
+Get-ADUser
+</pre>
+
+
+<p>Get info about domain users or a specified Domain user. Example (</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Get-GPO
+</pre>
+
+
+<p>Gets info about Group Policy Objects on the domain</p>
+
+
+
+<p>To take this a step further, you can use a powershell platform called powersploit, which is used for privilege escalation and reconnaissance of a Domain Controller. Here are some powersploit cmdlets you can use for recon.</p>
+
+
+
+<h1><strong>Get-DomainDNSZone</strong></h1>
+
+
+
+<p>Enumerates the Active Directory DNS zones for a given domain</p>
+
+
+
+<p>Get-NetGPOGroup</p>
+
+
+
+<p>gets all GPOs in a domain that set &#8220;Restricted Groups&#8221;&nbsp;</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>on</strong> <strong>on</strong> <strong>target</strong> <strong>machines</strong></p>
+
+
+
+<p><strong>Invoke-UserHunter&nbsp;</strong></p>
+
+
+
+<p><strong>finds machines on the local domain where specified users are logged into, and can check if the current user has local admin access to found machines</strong></p>
+
+
+
+<p><strong>Invoke-FileFinder – This command finds sensitive files on hosts by traversing shared folders looking for specified search criteria.</strong></p>
+
+
+
+<p><strong>Find-InterestingFile&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8211;&nbsp;&nbsp;&nbsp;</strong></p>
+
+
+
+<p><strong>search a local or remote path for files with specific terms in the name</strong></p>
+
+
+
+<p><strong>Invoke-UserEventHunter&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8211; &nbsp; hunts for user logon events in domain controller event logs</strong></p>
+
+
+
+<p><strong>For more details on powersploit: https://powersploit.readthedocs.io/en/stable/Recon/README/</strong></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
 		
+		
+			</item>
+		<item>
+		<title>Hello world!</title>
+		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/</link>
+					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/#comments</comments>
+		
+		<dc:creator><![CDATA[user]]></dc:creator>
+		<pubDate>Thu, 24 Sep 2020 19:37:56 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=1</guid>
+
+					<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
+										<content:encoded><![CDATA[
+<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
 		
 		
 			</item>

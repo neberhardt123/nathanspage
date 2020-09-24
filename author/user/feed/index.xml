@@ -8,8 +8,8 @@
 	>
 
 <channel>
-	<title>Uncategorized &#8211; Nathan Eberhardt</title>
-	<atom:link href="https://neberhardt123.github.io/nathanspage/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<title>user &#8211; Nathan Eberhardt</title>
+	<atom:link href="https://neberhardt123.github.io/nathanspage/author/user/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Thu, 24 Sep 2020 23:33:29 +0000</lastBuildDate>
@@ -22,7 +22,7 @@
 
 <image>
 	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-32x32.jpg</url>
-	<title>Uncategorized &#8211; Nathan Eberhardt</title>
+	<title>user &#8211; Nathan Eberhardt</title>
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<width>32</width>
 	<height>32</height>
