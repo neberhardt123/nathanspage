@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments for Nathan Eberhardt	</title>
-	<atom:link href="http://neberhardt123.github.io/nathanspage/comments/feed/" rel="self" type="application/rss+xml" />
-	<link>http://neberhardt123.github.io/nathanspage</link>
+	<atom:link href="https://neberhardt123.github.io/nathanspage/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>Just another WordPress site</description>
 	<lastBuildDate>Thu, 24 Sep 2020 07:01:50 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		Comment on Hello world! by A WordPress Commenter		</title>
-		<link>http://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/#comment-1</link>
+		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/#comment-1</link>
 
 		<dc:creator><![CDATA[A WordPress Commenter]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 07:01:50 +0000</pubDate>
-		<guid isPermaLink="false">http://neberhardt123.github.io/nathanspage/?p=1#comment-1</guid>
+		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=1#comment-1</guid>
 
 					<description><![CDATA[Hi, this is a comment.
 To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
