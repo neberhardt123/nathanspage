@@ -12,7 +12,7 @@
 	<atom:link href="https://neberhardt123.github.io/nathanspage/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Thu, 24 Sep 2020 23:39:39 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 25 Sep 2020 02:37:58 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -34,7 +34,7 @@
 		
 		<dc:creator><![CDATA[user]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 20:07:26 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
+				<category><![CDATA[Guides]]></category>
 		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=14</guid>
 
 					<description><![CDATA[This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network. The...]]></description>
@@ -230,16 +230,42 @@ netsh interface ip show config
 </pre>
 
 
-<p>Displays configurations for your network interfaces</p>
+<p>Displays configurations for your network interfaces.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
-netsh advfirewall firewall export &lt;path&gt;
+netsh advfirewall firewall export ]path]
 </pre>
 
 
-<p>Grabs firewall settings on the machine and exports to a file</p>
+<p>Grabs firewall settings on the machine and exports to a file.</p>
 </div></div>
+
+
+<pre class="brush: plain; title: ; notranslate">
+reg query [key]
+</pre>
+
+
+<p>the reg command is used to display values of a registry key. Example:</p>
+
+
+
+<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
+reg query HKEY_LOCAL_MACHINE\SOFTWARE
+</pre>
+
+
+<p>This will return installed software.</p>
+</div></div>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Nbtstat -a [IP]
+</pre>
+
+
+<p>Finds the NetBIOS name of an endpoint with the specified ip address.</p>
 
 
 
@@ -251,7 +277,7 @@ netsh advfirewall firewall export &lt;path&gt;
 
 
 
-<p>There is a lot of useful domain information you can collect with powershell cmdlets</p>
+<p>There is a lot of useful domain information you can collect with powershell cmdlets.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -259,7 +285,7 @@ Get-ADDomain [Server]
 </pre>
 
 
-<p>Gets info about the domain</p>
+<p>Gets info about the domain.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -267,7 +293,7 @@ Get-ADGroup [Group]
 </pre>
 
 
-<p>Gets info about the domain groups or specified.</p>
+<p>Gets info about the domain groups or specified group.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -275,31 +301,59 @@ Get-ADGroupMember [Group]
 </pre>
 
 
-<p>Gets info about the members of a Domain Group. Example (Getting list of Domain Admins):</p>
+<p>Gets info about the members of a Domain Group. Example:</p>
 
 
-<pre class="brush: plain; class-name: &#039;domain-adminsec&#039;; title: ; notranslate">
+
+<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container">
+<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
 Get-ADGroupMember &quot;Domain Admins&quot;
 </pre>
+
+
+<p>Get list of members in Domain Admins group.</p>
+</div></div>
+</div></div>
+
 
 <pre class="brush: plain; title: ; notranslate">
 Get-ADComputer [Computer]
 </pre>
 
 
-<p>Get info about domain computers or a specified computer. Example (Find computers that are running RDP service):</p>
+<p>Get info about domain computers or a specified computer. Example:</p>
 
 
-<pre class="brush: plain; class-name: &#039;get-adcomputer&#039;; title: ; notranslate">
+
+<div class="wp-block-group termsrv-get"><div class="wp-block-group__inner-container">
+<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
  Get-ADComputer -Filter {ServicePrincipalName -like “*TERMSRV*”}
 </pre>
+
+
+<p>Find all computers running RDP service</p>
+</div></div>
+</div></div>
+
 
 <pre class="brush: plain; title: ; notranslate">
 Get-ADUser
 </pre>
 
 
-<p>Get info about domain users or a specified Domain user. Example (</p>
+<p>Get info about domain users or a specified Domain user. Example:</p>
+
+
+
+<div class="wp-block-group spn-aduser"><div class="wp-block-group__inner-container">
+<div class="wp-block-group spn-aduser"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
+Get-ADUser -Filter {ServicePrincipalName -like “*”} 
+</pre>
+
+
+<p>Find Service Accounts by filtering by SPN.</p>
+</div></div>
+</div></div>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -311,55 +365,59 @@ Get-GPO
 
 
 
-<p>To take this a step further, you can use a powershell platform called powersploit, which is used for privilege escalation and reconnaissance of a Domain Controller. Here are some powersploit cmdlets you can use for recon.</p>
+<p>To take this a step further, you can use a PowerShell platform called powersploit, which is used for privilege escalation and reconnaissance of a Domain Controller. Here are some powersploit cmdlets you can use for recon.</p>
 
 
-
-<h1><strong>Get-DomainDNSZone</strong></h1>
-
+<pre class="brush: plain; title: ; notranslate">
+Get-DomainDNSZone
+</pre>
 
 
 <p>Enumerates the Active Directory DNS zones for a given domain</p>
 
 
-
-<p>Get-NetGPOGroup</p>
-
-
-
-<p>gets all GPOs in a domain that set &#8220;Restricted Groups&#8221;&nbsp;</p>
+<pre class="brush: plain; title: ; notranslate">
+Get-NetGPOGroup
+</pre>
 
 
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>on</strong> <strong>on</strong> <strong>target</strong> <strong>machines</strong></p>
-
+<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain. </p>
 
 
-<p><strong>Invoke-UserHunter&nbsp;</strong></p>
+<pre class="brush: plain; title: ; notranslate">
+Invoke-UserHunter
+</pre>
+
+
+<p>Finds machines on the local domain where specified users are logged into, and can check if the current user has local admin access to the machines.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Invoke-FileFinder
+</pre>
+
+
+<p>Finds sensitive files on hosts by searching shared folders.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Find-InterestingFile
+</pre>
+
+
+<p>Searches a local or remote path for files with specific terms in the name.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Invoke-UserEventHunter
+</pre>
+
+
+<p> Hunts for user logon events in domain controller event logs.</p>
 
 
 
-<p><strong>finds machines on the local domain where specified users are logged into, and can check if the current user has local admin access to found machines</strong></p>
-
-
-
-<p><strong>Invoke-FileFinder – This command finds sensitive files on hosts by traversing shared folders looking for specified search criteria.</strong></p>
-
-
-
-<p><strong>Find-InterestingFile&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8211;&nbsp;&nbsp;&nbsp;</strong></p>
-
-
-
-<p><strong>search a local or remote path for files with specific terms in the name</strong></p>
-
-
-
-<p><strong>Invoke-UserEventHunter&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8211; &nbsp; hunts for user logon events in domain controller event logs</strong></p>
-
-
-
-<p><strong>For more details on powersploit: https://powersploit.readthedocs.io/en/stable/Recon/README/</strong></p>
+<p>For more details on powersploit: <a href="https://powersploit.readthedocs.io/en/stable/Recon/README/" target="_blank" rel="noreferrer noopener">https://powersploit.readthedocs.io/en/stable/Recon/README/</a></p>
 ]]></content:encoded>
 					
 					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/</wfw:commentRss>
@@ -368,18 +426,26 @@ Get-GPO
 		
 			</item>
 		<item>
-		<title>Hello world!</title>
+		<title>MCSG &#8211;</title>
 		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/</link>
 					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/#comments</comments>
 		
 		<dc:creator><![CDATA[user]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 19:37:56 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
+				<category><![CDATA[Guides]]></category>
 		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=1</guid>
 
-					<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
+					<description><![CDATA[It is often debated in the mcsg community who the best minecraft survival games player was. Although there are many different theories, this post will provide the most credible answer for this question, as this response is backed up by a diverse range of credible sources. Before we dive into the analysis, let me give...]]></description>
 										<content:encoded><![CDATA[
-<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+<p>It is often debated in the mcsg community who the best minecraft survival games player was. Although there are many different theories, this post will provide the most credible answer for this question, as this response is backed up by a diverse range of credible sources. </p>
+
+
+
+<p>Before we dive into the analysis, let me give a brief background about myself. I am an ex mcsg player, known by the ign &#8220;jbrick123.&#8221; As a retired professional, I feel I am qualified to make many of the claims listed in this post. I started in the year 2012 where I had a kd ratio and winrate that was almost unparralled. Over the years, I gained a great insight into who my biggest competition was, most of whom were prominent youtubers at that time.</p>
+
+
+
+<p>Grav4yrd was an og. What do I mean by &#8220;og&#8221;? Well,</p>
 ]]></content:encoded>
 					
 					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/feed/</wfw:commentRss>

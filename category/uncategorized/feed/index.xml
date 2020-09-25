@@ -12,7 +12,7 @@
 	<atom:link href="https://neberhardt123.github.io/nathanspage/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Thu, 24 Sep 2020 23:39:39 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 25 Sep 2020 00:16:22 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -279,7 +279,7 @@ Get-ADGroupMember [Group]
 
 
 <pre class="brush: plain; class-name: &#039;domain-adminsec&#039;; title: ; notranslate">
-Get-ADGroupMember &quot;Domain Admins&quot;
+Get-ADGroupMember &quot;Domain Adminss&quot;
 </pre>
 
 <pre class="brush: plain; title: ; notranslate">
