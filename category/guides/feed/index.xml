@@ -12,7 +12,7 @@
 	<atom:link href="https://neberhardt123.github.io/nathanspage/category/guides/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Fri, 25 Sep 2020 02:37:58 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 25 Sep 2020 19:40:12 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -21,7 +21,7 @@
 	<generator>https://wordpress.org/?v=5.5.1</generator>
 
 <image>
-	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-32x32.jpg</url>
+	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
 	<title>Guides &#8211; Nathan Eberhardt</title>
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<width>32</width>
@@ -32,7 +32,7 @@
 		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/</link>
 					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/#respond</comments>
 		
-		<dc:creator><![CDATA[user]]></dc:creator>
+		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 20:07:26 +0000</pubDate>
 				<category><![CDATA[Guides]]></category>
 		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=14</guid>
@@ -47,7 +47,7 @@
 
 
 
-<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide is primarily focussed on Windows Server, but much of this information still applies to workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
+<p>The more information you can collect about a system, the greater the chance of it becoming compromised. I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
 
 
 
@@ -130,7 +130,7 @@ Net [user/group]
 </pre>
 
 
-<p>Lists all local and domain users/groups</p>
+<p>Lists all local and domain users/groups.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -138,7 +138,7 @@ Net file
 </pre>
 
 
-<p>Shows a list of open files on a server</p>
+<p>Shows a list of open files on a server.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -147,6 +147,14 @@ Net share
 
 
 <p>Lists/manages shared resources on the machine</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Net start
+</pre>
+
+
+<p>Displays running services.</p>
 </div></div>
 
 
@@ -163,7 +171,7 @@ Cmdkey /list
 </pre>
 
 
-<p>displays a list of all user names and credentials that are stored in credential manager<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
+<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -247,7 +255,7 @@ reg query [key]
 </pre>
 
 
-<p>the reg command is used to display values of a registry key. Example:</p>
+<p>the reg command is used to display values of a registry key. Examples:</p>
 
 
 
@@ -256,7 +264,17 @@ reg query HKEY_LOCAL_MACHINE\SOFTWARE
 </pre>
 
 
-<p>This will return installed software.</p>
+<p>Returns installed software.</p>
+</div></div>
+
+
+
+<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+</pre>
+
+
+<p>Checks if &#8220;AlwaysInstallElevated&#8221; policy is enabled. If it is, then installed programs will automatically run with Administrative privileges.</p>
 </div></div>
 
 
@@ -381,7 +399,7 @@ Get-NetGPOGroup
 </pre>
 
 
-<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain. </p>
+<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain.&nbsp;</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -413,7 +431,7 @@ Invoke-UserEventHunter
 </pre>
 
 
-<p> Hunts for user logon events in domain controller event logs.</p>
+<p>&nbsp;Hunts for user logon events in domain controller event logs.</p>
 
 
 
@@ -422,34 +440,6 @@ Invoke-UserEventHunter
 					
 					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>MCSG &#8211;</title>
-		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/</link>
-					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/#comments</comments>
-		
-		<dc:creator><![CDATA[user]]></dc:creator>
-		<pubDate>Thu, 24 Sep 2020 19:37:56 +0000</pubDate>
-				<category><![CDATA[Guides]]></category>
-		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=1</guid>
-
-					<description><![CDATA[It is often debated in the mcsg community who the best minecraft survival games player was. Although there are many different theories, this post will provide the most credible answer for this question, as this response is backed up by a diverse range of credible sources. Before we dive into the analysis, let me give...]]></description>
-										<content:encoded><![CDATA[
-<p>It is often debated in the mcsg community who the best minecraft survival games player was. Although there are many different theories, this post will provide the most credible answer for this question, as this response is backed up by a diverse range of credible sources. </p>
-
-
-
-<p>Before we dive into the analysis, let me give a brief background about myself. I am an ex mcsg player, known by the ign &#8220;jbrick123.&#8221; As a retired professional, I feel I am qualified to make many of the claims listed in this post. I started in the year 2012 where I had a kd ratio and winrate that was almost unparralled. Over the years, I gained a great insight into who my biggest competition was, most of whom were prominent youtubers at that time.</p>
-
-
-
-<p>Grav4yrd was an og. What do I mean by &#8220;og&#8221;? Well,</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/feed/</wfw:commentRss>
-			<slash:comments>1</slash:comments>
 		
 		
 			</item>

@@ -8,11 +8,11 @@
 	>
 
 <channel>
-	<title>user &#8211; Nathan Eberhardt</title>
+	<title>Nathan &#8211; Nathan Eberhardt</title>
 	<atom:link href="https://neberhardt123.github.io/nathanspage/author/user/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Fri, 25 Sep 2020 02:37:58 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 25 Sep 2020 21:57:44 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=5.5.1</generator>
 
 <image>
-	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-32x32.jpg</url>
-	<title>user &#8211; Nathan Eberhardt</title>
+	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
+	<title>Nathan &#8211; Nathan Eberhardt</title>
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<width>32</width>
 	<height>32</height>
@@ -32,7 +32,7 @@
 		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/</link>
 					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/#respond</comments>
 		
-		<dc:creator><![CDATA[user]]></dc:creator>
+		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 20:07:26 +0000</pubDate>
 				<category><![CDATA[Guides]]></category>
 		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=14</guid>
@@ -47,7 +47,7 @@
 
 
 
-<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide is primarily focussed on Windows Server, but much of this information still applies to workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
+<p>The more information you can collect about a system, the greater the chance of it becoming compromised. I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
 
 
 
@@ -130,7 +130,7 @@ Net [user/group]
 </pre>
 
 
-<p>Lists all local and domain users/groups</p>
+<p>Lists all local and domain users/groups.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -138,7 +138,7 @@ Net file
 </pre>
 
 
-<p>Shows a list of open files on a server</p>
+<p>Shows a list of open files on a server.</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -147,6 +147,14 @@ Net share
 
 
 <p>Lists/manages shared resources on the machine</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+Net start
+</pre>
+
+
+<p>Displays running services.</p>
 </div></div>
 
 
@@ -163,7 +171,7 @@ Cmdkey /list
 </pre>
 
 
-<p>displays a list of all user names and credentials that are stored in credential manager<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
+<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -247,7 +255,7 @@ reg query [key]
 </pre>
 
 
-<p>the reg command is used to display values of a registry key. Example:</p>
+<p>the reg command is used to display values of a registry key. Examples:</p>
 
 
 
@@ -256,7 +264,17 @@ reg query HKEY_LOCAL_MACHINE\SOFTWARE
 </pre>
 
 
-<p>This will return installed software.</p>
+<p>Returns installed software.</p>
+</div></div>
+
+
+
+<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+</pre>
+
+
+<p>Checks if &#8220;AlwaysInstallElevated&#8221; policy is enabled. If it is, then installed programs will automatically run with Administrative privileges.</p>
 </div></div>
 
 
@@ -381,7 +399,7 @@ Get-NetGPOGroup
 </pre>
 
 
-<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain. </p>
+<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain.&nbsp;</p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -413,7 +431,7 @@ Invoke-UserEventHunter
 </pre>
 
 
-<p> Hunts for user logon events in domain controller event logs.</p>
+<p>&nbsp;Hunts for user logon events in domain controller event logs.</p>
 
 
 
@@ -426,30 +444,54 @@ Invoke-UserEventHunter
 		
 			</item>
 		<item>
-		<title>MCSG &#8211;</title>
-		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/</link>
-					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/#comments</comments>
+		<title>History of Minecraft Survival Games and battle royale</title>
+		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/</link>
+					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/#respond</comments>
 		
-		<dc:creator><![CDATA[user]]></dc:creator>
+		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 19:37:56 +0000</pubDate>
-				<category><![CDATA[Guides]]></category>
+				<category><![CDATA[Misc]]></category>
 		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=1</guid>
 
-					<description><![CDATA[It is often debated in the mcsg community who the best minecraft survival games player was. Although there are many different theories, this post will provide the most credible answer for this question, as this response is backed up by a diverse range of credible sources. Before we dive into the analysis, let me give...]]></description>
+					<description><![CDATA[Minecraft Hunger Games, a.k.a, Minecraft Survival Games is one of Minecraft&#8217;s most famous game modes of all time. Minecraft Hunger Games was founded in March 23, 2012, and was based on the popular &#8220;Hunger Games&#8221; movie that was released in early 2012. If you have no idea what Minecraft is, or even Hunger Games, let...]]></description>
 										<content:encoded><![CDATA[
-<p>It is often debated in the mcsg community who the best minecraft survival games player was. Although there are many different theories, this post will provide the most credible answer for this question, as this response is backed up by a diverse range of credible sources. </p>
+<p>Minecraft Hunger Games, a.k.a, Minecraft Survival Games is one of Minecraft&#8217;s most famous game modes of all time. Minecraft Hunger Games was founded in March 23, 2012, and was based on the popular &#8220;Hunger Games&#8221; movie that was released in early 2012. If you have no idea what Minecraft is, or even Hunger Games, let me explain briefly: Minecraft is a sandbox game that allows players to build, explore, and create virtually anything from their imagination. Hunger games is a concept created by Suzanne Collins where 24 randomly chosen children are selected to compete in a battle royale to the death. Although it may seem off-putting to put this type of concept into a video game, the idea of battle royale games would later lead to the creation of some of the most popular video games to date, such as Fortnite and PUBG. In a battle royale, players must fight to the last man standing. There is no second place, no third place, or even last place; only one winner will remain at the end. You are allowed to form teams and make alliances during the game, but all players must figure out how to keep themselves alive to the very end. Minecraft Hunger Games was later renamed to &#8220;Survival Games&#8221; in later iterations of the game mode.</p>
 
 
 
-<p>Before we dive into the analysis, let me give a brief background about myself. I am an ex mcsg player, known by the ign &#8220;jbrick123.&#8221; As a retired professional, I feel I am qualified to make many of the claims listed in this post. I started in the year 2012 where I had a kd ratio and winrate that was almost unparralled. Over the years, I gained a great insight into who my biggest competition was, most of whom were prominent youtubers at that time.</p>
+<p>Creating the world of Hunger Games in Minecraft was first thought of by a build team named Vareide, when they created the first hunger games map known as &#8220;SG-1&#8221;. The map payed tribute to the blockbuster franchise by spawning players in a circle around a &#8220;cornucopia,&#8221; which was filled with a large selection of weapons and gear. At game start, the player could either choose to rush towards the center and risk dying to the other players, or play it safe and run into the wild. However the player chose to plan out their strategies, everyone would eventually be forced into the center of the map after a given time. Players that died could continue to spectate the game, and even sponsor the remaining players with special items and gear. This was very similar to the Hunger Games movie where sponsors could donate food or medicine which could be dropped in the arena via parachutes. All aspects of SG-1 were implemented in an attempt to recreate the environment and feeling of the original Hunger Games.</p>
 
 
 
-<p>Grav4yrd was an og. What do I mean by &#8220;og&#8221;? Well,</p>
+<figure class="wp-block-image size-full is-resized is-style-default"><img loading="lazy" src="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/sg1.jpg" alt="SG-1" class="wp-image-155" width="585" height="328"/><figcaption>SG-1 Map</figcaption></figure>
+
+
+
+<p>Just after a month of the release of SG-1, Minecraft Survival Games blew up in popularity, after a group of well-known youtubers collaborated together to play the map. The video, which was titled &#8220;Minecraft: Hunger Games Survival with Friends&#8221; garnered over 10 million views, and sparked interest in other Minecraft players who wanted to try this game mode out for themselves. Players were innovative, and over time new maps were added, and extra features were implemented to improve the gameplay experience.</p>
+
+
+
+<p>One Minecraft server in particular become the dominating hub of the Hunger Games game mode, and it was known as MCSG. MCSG introduced a competitive scene for Survival Games, and players from around the world could test their skills on this server. The server featured a point system, where if players won, they would get a certain amount of points, and a leaderboard would track the total amount of points earned by each player. MCSG set the stage for Survival Games for years to come, and over time new servers would be created to try and make their own version of the game mode.</p>
+
+
+
+<p>Unfortunately, in 2016, Minecraft Survival Games faced some major issues. Hackers and cheaters become more prominent, and players become extremely frustrated when they had to compete against large teams in their games when playing solo. In addition, Minecraft itself came out with several controversial updates that changed the way player combat behaved. It became apparent that most of these problems were almost impossible to resolve, and as a result MCSG died a bitter death. Other servers faced similar problems, and they too would eventually die off.</p>
+
+
+
+<p>However, the story of battle royale games did not die off with Minecraft. Game developers took this new and exciting concept to create their own games. H1Z1 was a game released in 2015 that gained huge popularity, and it featured a post-apocalyptic map where 200 players would fight to the last man standing. H1Z1 had little in common with the original Hunger Games setting, other than that it was a battle royale game. Players entered the map via skydiving, and used guns as their primary weapons. </p>
+
+
+
+<p>Future battle royale game would stray away from the original concept of Hunger Games, and would more closely represent games like H1Z1, featuring more modern weapons and designs. Games like Fortnite would later become one of the most popular games to ever exist.</p>
+
+
+
+<p>Being a Minecraft Survival Games fan myself, I don&#8217;t necessarily consider the fall of MCSG as a a tragic event. Survival Games set the stage for what battle royale games would become and evolve into. It&#8217;s interesting to see how game developers have taken this mode into their own hands in order to entertain the lives of millions all over the world.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/feed/</wfw:commentRss>
-			<slash:comments>1</slash:comments>
+					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
 		
 		
 			</item>

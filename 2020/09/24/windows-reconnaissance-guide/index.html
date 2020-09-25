@@ -39,7 +39,7 @@ img.emoji {
 <script type='text/javascript' src='https://neberhardt123.github.io/nathanspage/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
 <link rel="https://api.w.org/" href="https://neberhardt123.github.io/nathanspage/wp-json/" /><link rel="alternate" type="application/json" href="https://neberhardt123.github.io/nathanspage/wp-json/wp/v2/posts/14" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://neberhardt123.github.io/nathanspage/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://neberhardt123.github.io/nathanspage/wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='MCSG &#8211;' href='https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/' />
+<link rel='prev' title='History of Minecraft Survival Games and battle royale' href='https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/' />
 <meta name="generator" content="WordPress 5.5.1" />
 <link rel="canonical" href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/" />
 <link rel='shortlink' href='https://neberhardt123.github.io/nathanspage/?p=14' />
@@ -48,10 +48,10 @@ img.emoji {
 <style type="text/css" id="custom-background-css">
 body.custom-background { background-color: #c9c9c9; }
 </style>
-	<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-32x32.jpg" sizes="32x32" />
-<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-192x192.jpg" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-180x180.jpg" />
-<meta name="msapplication-TileImage" content="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-animeoprofile-270x270.jpg" />
+	<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-270x270.jpg" />
 		<style type="text/css" id="wp-custom-css">
 			/* change SyntaxHighlighter plugins styles */
     /* font-size */
@@ -83,8 +83,15 @@ body.custom-background { background-color: #c9c9c9; }
 	padding-left:25px;
 }
 
+.site-description {
+	font-size:17px;
+}
 
-
+ul#menu-navbar.primary-menu li{
+	border:1px solid black;
+	margin-right:10px;
+	margin-left:10px;
+}
 		</style>
 		
 </head>
@@ -150,7 +157,7 @@ body.custom-background { background-color: #c9c9c9; }
 	<header class="entry-header">
 		<h1 class="entry-title">Using CMD and PowerShell for Windows Reconnaissance</h1>
 		<div class="entry-info">
-			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-09-25T02:21:51+00:00">September 25, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">user</a></span>		</div>
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-09-25T19:40:12+00:00">September 25, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">Nathan</a></span>		</div>
 	</header>
 
 	
@@ -164,7 +171,7 @@ body.custom-background { background-color: #c9c9c9; }
 
 
 
-<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide is primarily focussed on Windows Server, but much of this information still applies to workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
+<p>The more information you can collect about a system, the greater the chance of it becoming compromised. I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
 
 
 
@@ -247,7 +254,7 @@ Net [user/group]
 </pre>
 
 
-<p>Lists all local and domain users/groups</p>
+<p>Lists all local and domain users/groups.</p>
 
 
 <pre class="brush: plain; title: ; notranslate" title="">
@@ -255,7 +262,7 @@ Net file
 </pre>
 
 
-<p>Shows a list of open files on a server</p>
+<p>Shows a list of open files on a server.</p>
 
 
 <pre class="brush: plain; title: ; notranslate" title="">
@@ -264,6 +271,14 @@ Net share
 
 
 <p>Lists/manages shared resources on the machine</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+Net start
+</pre>
+
+
+<p>Displays running services.</p>
 </div></div>
 
 
@@ -280,7 +295,7 @@ Cmdkey /list
 </pre>
 
 
-<p>displays a list of all user names and credentials that are stored in credential manager<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
+<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
 
 
 <pre class="brush: plain; title: ; notranslate" title="">
@@ -364,7 +379,7 @@ reg query [key]
 </pre>
 
 
-<p>the reg command is used to display values of a registry key. Example:</p>
+<p>the reg command is used to display values of a registry key. Examples:</p>
 
 
 
@@ -373,7 +388,17 @@ reg query HKEY_LOCAL_MACHINE\SOFTWARE
 </pre>
 
 
-<p>This will return installed software.</p>
+<p>Returns installed software.</p>
+</div></div>
+
+
+
+<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+</pre>
+
+
+<p>Checks if &#8220;AlwaysInstallElevated&#8221; policy is enabled. If it is, then installed programs will automatically run with Administrative privileges.</p>
 </div></div>
 
 
@@ -498,7 +523,7 @@ Get-NetGPOGroup
 </pre>
 
 
-<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain. </p>
+<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain.&nbsp;</p>
 
 
 <pre class="brush: plain; title: ; notranslate" title="">
@@ -530,7 +555,7 @@ Invoke-UserEventHunter
 </pre>
 
 
-<p> Hunts for user logon events in domain controller event logs.</p>
+<p>&nbsp;Hunts for user logon events in domain controller event logs.</p>
 
 
 
@@ -541,7 +566,7 @@ Invoke-UserEventHunter
 
 	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
 		<h2 class="screen-reader-text">Post navigation</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">MCSG &#8211;</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">History of Minecraft Survival Games and battle royale</span></a></div></div>
 	</nav>
 <div id="comments" class="comments-area">
 
@@ -568,7 +593,7 @@ Invoke-UserEventHunter
 					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/" aria-current="page">Using CMD and PowerShell for Windows Reconnaissance</a>
 									</li>
 											<li>
-					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/hello-world/">MCSG &#8211;</a>
+					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/">History of Minecraft Survival Games and battle royale</a>
 									</li>
 					</ul>
 
@@ -581,6 +606,8 @@ Invoke-UserEventHunter
 			<ul>
 					<li class="cat-item cat-item-1"><a href="https://neberhardt123.github.io/nathanspage/category/guides/">Guides</a>
 </li>
+	<li class="cat-item cat-item-3"><a href="https://neberhardt123.github.io/nathanspage/category/misc/">Misc</a>
+</li>
 			</ul>
 
 			</section></aside><!-- .sidebar .widget-area -->
@@ -590,7 +617,7 @@ Invoke-UserEventHunter
         
                 <footer id="colophon" class="site-footer" role="contentinfo">
             <div class="site-info container">
-                            <a href="https://wordpress.org/">Proudly powered by WordPress</a>
+                            <a href="https://wordpress.org/"><p>Copyright© 2020 Nathan Eberhardt</p></a>
             </div>
         </footer>
         
