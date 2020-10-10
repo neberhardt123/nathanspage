@@ -7,12 +7,12 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
 	        <link rel="pingback" href="https://neberhardt123.github.io/nathanspage/xmlrpc.php">
 	    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-<title>Using CMD and PowerShell for Windows Reconnaissance &#8211; Nathan Eberhardt</title>
+<title>Windows Reconnaissance with CMD and PowerShell &#8211; Nathan Eberhardt</title>
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Feed" href="https://neberhardt123.github.io/nathanspage/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Comments Feed" href="https://neberhardt123.github.io/nathanspage/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Using CMD and PowerShell for Windows Reconnaissance Comments Feed" href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Windows Reconnaissance with CMD and PowerShell Comments Feed" href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/" />
 		<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/neberhardt123.github.io\/nathanspage\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
 			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
@@ -40,6 +40,7 @@ img.emoji {
 <link rel="https://api.w.org/" href="https://neberhardt123.github.io/nathanspage/wp-json/" /><link rel="alternate" type="application/json" href="https://neberhardt123.github.io/nathanspage/wp-json/wp/v2/posts/14" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://neberhardt123.github.io/nathanspage/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://neberhardt123.github.io/nathanspage/wp-includes/wlwmanifest.xml" /> 
 <link rel='prev' title='History of Minecraft Survival Games and battle royale' href='https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/' />
+<link rel='next' title='HackTheBox &#8211; Buff' href='https://neberhardt123.github.io/nathanspage/2020/10/10/hackthebox-buff/' />
 <meta name="generator" content="WordPress 5.5.1" />
 <link rel="canonical" href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/" />
 <link rel='shortlink' href='https://neberhardt123.github.io/nathanspage/?p=14' />
@@ -88,9 +89,49 @@ body.custom-background { background-color: #c9c9c9; }
 }
 
 ul#menu-navbar.primary-menu li{
-	border:1px solid black;
+	/*border:1px solid black;*/
 	margin-right:10px;
 	margin-left:10px;
+	font-size:22px;
+}
+.wp-block-separator is-style-wide {
+	
+}
+h1.entry-title {
+	font-size:2.8rem;
+
+}
+.hrcustom {
+	border-top:1px solid #ccc;
+}
+/*
+.widget {
+	border-top:none;
+	border-bottom: 2px solid #f5f5f5;
+	padding-bottom:30px;
+	margin-top:0px;
+	padding-top:none;
+	margin-bottom:0px
+}
+*/
+
+.widget_recent_entries {
+	border-top:none;
+}
+
+#emairu {
+	color:#cc0000;
+}
+
+.site-description {
+	font-size:21px;
+	font-weight:600;
+	color:#999999;
+}
+
+.site-header {
+	padding:0px;
+	padding-top:10px;
 }
 		</style>
 		
@@ -155,9 +196,9 @@ ul#menu-navbar.primary-menu li{
 <article id="post-14" class="post-14 post type-post status-publish format-standard hentry category-guides">
 
 	<header class="entry-header">
-		<h1 class="entry-title">Using CMD and PowerShell for Windows Reconnaissance</h1>
+		<h1 class="entry-title">Windows Reconnaissance with CMD and PowerShell</h1>
 		<div class="entry-info">
-			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-09-25T19:40:12+00:00">September 25, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">Nathan</a></span>		</div>
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-10-10T19:21:35+00:00">October 10, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">Nathan</a></span>		</div>
 	</header>
 
 	
@@ -171,7 +212,7 @@ ul#menu-navbar.primary-menu li{
 
 
 
-<p>The more information you can collect about a system, the greater the chance of it becoming compromised. I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
+<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide will be useful for both the initial recon of a Windows system, as well as for post exploitation (especially if you only have access to a cli). I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how you can use this gathered information to escalate privileges in the Domain.</p>
 
 
 
@@ -332,7 +373,7 @@ Icacls [path]
 
 
 <pre class="brush: plain; title: ; notranslate" title="">
-icacls &quot;C:\Program Files\*&quot; | findstr &quot;(F)&quot; | findstr &quot;Everyone&quot;
+icacls &quot;C:\Users\*&quot; | findstr &quot;(F)&quot; | findstr &quot;Everyone&quot;
 </pre>
 
 
@@ -366,7 +407,7 @@ netsh interface ip show config
 
 
 <pre class="brush: plain; title: ; notranslate" title="">
-netsh advfirewall firewall export ]path]
+netsh advfirewall firewall export [path]
 </pre>
 
 
@@ -394,11 +435,11 @@ reg query HKEY_LOCAL_MACHINE\SOFTWARE
 
 
 <div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
-reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query &quot;HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon&quot;
 </pre>
 
 
-<p>Checks if &#8220;AlwaysInstallElevated&#8221; policy is enabled. If it is, then installed programs will automatically run with Administrative privileges.</p>
+<p>You can sometimes find default credentials in User Autologon</p>
 </div></div>
 
 
@@ -408,6 +449,14 @@ Nbtstat -a [IP]
 
 
 <p>Finds the NetBIOS name of an endpoint with the specified ip address.</p>
+
+
+<pre class="brush: plain; title: ; notranslate" title="">
+netstat -anob
+</pre>
+
+
+<p>Netstat displays connections for the current machine. You want to look for any listening connections that can be connected to remotely. Some of the ports may not be accessible externally, but portforwarding them can make them accessible.</p>
 
 
 
@@ -566,7 +615,7 @@ Invoke-UserEventHunter
 
 	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
 		<h2 class="screen-reader-text">Post navigation</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">History of Minecraft Survival Games and battle royale</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">History of Minecraft Survival Games and battle royale</span></a></div><div class="nav-next"><a href="https://neberhardt123.github.io/nathanspage/2020/10/10/hackthebox-buff/" rel="next"><span class="meta-nav" aria-hidden="true">Next</span><span class="screen-reader-text">Next post:</span> <span class="post-title">HackTheBox &#8211; Buff</span></a></div></div>
 	</nav>
 <div id="comments" class="comments-area">
 
@@ -590,7 +639,10 @@ Invoke-UserEventHunter
 		<h4 class="widget-title">Recent Posts</h4>
 		<ul>
 											<li>
-					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/" aria-current="page">Using CMD and PowerShell for Windows Reconnaissance</a>
+					<a href="https://neberhardt123.github.io/nathanspage/2020/10/10/hackthebox-buff/">HackTheBox &#8211; Buff</a>
+									</li>
+											<li>
+					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/" aria-current="page">Windows Reconnaissance with CMD and PowerShell</a>
 									</li>
 											<li>
 					<a href="https://neberhardt123.github.io/nathanspage/2020/09/24/mcsg/">History of Minecraft Survival Games and battle royale</a>
@@ -599,12 +651,15 @@ Invoke-UserEventHunter
 
 		</section><section id="archives-2" class="widget widget_archive"><h4 class="widget-title">Archives</h4>
 			<ul>
-					<li><a href='https://neberhardt123.github.io/nathanspage/2020/09/'>September 2020</a></li>
+					<li><a href='https://neberhardt123.github.io/nathanspage/2020/10/'>October 2020</a></li>
+	<li><a href='https://neberhardt123.github.io/nathanspage/2020/09/'>September 2020</a></li>
 			</ul>
 
 			</section><section id="categories-2" class="widget widget_categories"><h4 class="widget-title">Categories</h4>
 			<ul>
 					<li class="cat-item cat-item-1"><a href="https://neberhardt123.github.io/nathanspage/category/guides/">Guides</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://neberhardt123.github.io/nathanspage/category/hackthebox/">HackTheBox</a>
 </li>
 	<li class="cat-item cat-item-3"><a href="https://neberhardt123.github.io/nathanspage/category/misc/">Misc</a>
 </li>

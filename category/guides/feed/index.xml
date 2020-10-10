@@ -12,7 +12,7 @@
 	<atom:link href="https://neberhardt123.github.io/nathanspage/category/guides/feed/" rel="self" type="application/rss+xml" />
 	<link>https://neberhardt123.github.io/nathanspage</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Fri, 25 Sep 2020 19:40:12 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 10 Oct 2020 19:21:35 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,7 +28,7 @@
 	<height>32</height>
 </image> 
 	<item>
-		<title>Using CMD and PowerShell for Windows Reconnaissance</title>
+		<title>Windows Reconnaissance with CMD and PowerShell</title>
 		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/</link>
 					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/#respond</comments>
 		
@@ -47,7 +47,7 @@
 
 
 
-<p>The more information you can collect about a system, the greater the chance of it becoming compromised. I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how a misconfigured domain controller can be exploited by tools such as blood hound.</p>
+<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide will be useful for both the initial recon of a Windows system, as well as for post exploitation (especially if you only have access to a cli). I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how you can use this gathered information to escalate privileges in the Domain.</p>
 
 
 
@@ -208,7 +208,7 @@ Icacls [path]
 
 
 <pre class="brush: plain; title: ; notranslate">
-icacls &quot;C:\Program Files\*&quot; | findstr &quot;(F)&quot; | findstr &quot;Everyone&quot;
+icacls &quot;C:\Users\*&quot; | findstr &quot;(F)&quot; | findstr &quot;Everyone&quot;
 </pre>
 
 
@@ -242,7 +242,7 @@ netsh interface ip show config
 
 
 <pre class="brush: plain; title: ; notranslate">
-netsh advfirewall firewall export ]path]
+netsh advfirewall firewall export [path]
 </pre>
 
 
@@ -270,11 +270,11 @@ reg query HKEY_LOCAL_MACHINE\SOFTWARE
 
 
 <div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate">
-reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query &quot;HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon&quot;
 </pre>
 
 
-<p>Checks if &#8220;AlwaysInstallElevated&#8221; policy is enabled. If it is, then installed programs will automatically run with Administrative privileges.</p>
+<p>You can sometimes find default credentials in User Autologon</p>
 </div></div>
 
 
@@ -284,6 +284,14 @@ Nbtstat -a [IP]
 
 
 <p>Finds the NetBIOS name of an endpoint with the specified ip address.</p>
+
+
+<pre class="brush: plain; title: ; notranslate">
+netstat -anob
+</pre>
+
+
+<p>Netstat displays connections for the current machine. You want to look for any listening connections that can be connected to remotely. Some of the ports may not be accessible externally, but portforwarding them can make them accessible.</p>
 
 
 
