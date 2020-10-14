@@ -40,7 +40,14 @@ img.emoji {
 <link rel="https://api.w.org/" href="https://neberhardt123.github.io/nathanspage/wp-json/" /><link rel="alternate" type="application/json" href="https://neberhardt123.github.io/nathanspage/wp-json/wp/v2/categories/1" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://neberhardt123.github.io/nathanspage/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://neberhardt123.github.io/nathanspage/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress 5.5.1" />
-<style type="text/css" id="custom-background-css">
+	<style id="thesimplest-custom-header-styles" type="text/css">
+    .site-branding .site-title a,
+    .site-description {
+        color: #11092d;
+    }
+	</style>
+
+	<style type="text/css" id="custom-background-css">
 body.custom-background { background-color: #c9c9c9; }
 </style>
 	<link rel="icon" href="https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-32x32.jpg" sizes="32x32" />
@@ -138,7 +145,67 @@ p{
 	font-family:'Open Sans', Arial;
 
 }
-		</style>
+
+.sidebar {
+	#border-left:2px solid #f5f5f5;
+
+}
+/**
+.widget {
+
+-webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
+-moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
+box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
+	margin:0px;
+	margin-bottom:20px;
+	padding:1.5em;
+    background-color: hsla(0,0%,80.4%,.1);
+}
+#secondary {
+	
+}
+
+.widget {
+	background:white;
+}
+
+#masthead {
+	-webkit-box-shadow: 0 4px 6px -6px black;
+	   -moz-box-shadow: 0 4px 6px -6px black;
+	        box-shadow: 0 4px 6px -6px black;
+}
+
+#main {
+	background:white;
+	-webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
+-moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
+box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
+	padding:3.5em 6.5em 3.5em 6.5em;
+}
+#colophon {
+	margin-top:20px;
+}
+.site-inner {
+	background-image: url(https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/10/dust-scratches.png)
+}
+**/
+
+.post {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+	padding:2em;
+
+}
+.page-header {
+	border:none;
+	margin:0;
+}
+#masthead {
+	    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.single-post .site .site-inner .container .row #main .post{
+	box-shadow:none;
+}		</style>
 		
 </head>
 <body class="archive category category-guides category-1 custom-background">
@@ -180,8 +247,8 @@ p{
                 <div id="site-header-menu" class="site-header-menu clearfix">
 
                         <nav id="site-navigation" class="main-navigation container" role="navigation" aria-label="Primary Menu">
-				            <div class="menu-navbar-container"><ul id="menu-navbar" class="primary-menu"><li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-13"><a href="https://neberhardt123.github.io/nathanspage/">Home</a></li>
-<li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-11"><a href="https://neberhardt123.github.io/nathanspage/blogs/">Blogs</a></li>
+				            <div class="menu-navbar-container"><ul id="menu-navbar" class="primary-menu"><li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="https://neberhardt123.github.io/nathanspage/sample-page/">About</a></li>
+<li id="menu-item-324" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-324"><a href="https://neberhardt123.github.io/nathanspage">Blogs</a></li>
 </ul></div>                        </nav><!-- .main-navigation -->
                 </div><!-- .site-header-menu -->
             </div><!-- .menu-wrapper -->
@@ -203,7 +270,7 @@ p{
 
 			
 <article id="post-14" class="post-14 post type-post status-publish format-standard hentry category-guides">
-
+<a href="#">
     <header class="entry-header">
 
         
@@ -212,14 +279,12 @@ p{
             <span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-10-10T19:21:35+00:00">October 10, 2020</time></span><span class="author-info"> by <a href="https://neberhardt123.github.io/nathanspage/author/user/">Nathan</a></span>        </div>
     </header>
 
-    
-    <div class="entry-content">
+        <div class="entry-content">
                 <div class="entry-summary">
             <p>This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network.</p>
         </div>
         </div><!-- .entry-content -->
-
-	<footer class="entry-footer clearfix"><span class="cat-tags-links"><span class="cat-links"><span class="cat-icon"><i class="fa fa-folder-open"></i></span><span class="screen-reader-text">Categories</span><a href="https://neberhardt123.github.io/nathanspage/category/guides/" rel="category tag">Guides</a></span></span></footer>
+	<footer class="entry-footer clearfix"><span class="cat-tags-links"><span class="cat-links"><span class="cat-icon"><i class="fa fa-folder-open"></i></span><span class="screen-reader-text">Categories</span><a href="https://neberhardt123.github.io/nathanspage/category/guides/" rel="category tag">Guides</a></span></span></footer></a>
 </article>
 <!-- have_post() -->
 
