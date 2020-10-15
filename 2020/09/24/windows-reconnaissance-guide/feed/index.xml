@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: Windows Reconnaissance with CMD and PowerShell	</title>
-	<atom:link href="https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/" rel="self" type="application/rss+xml" />
-	<link>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/</link>
+	<atom:link href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/feed/" rel="self" type="application/rss+xml" />
+	<link>http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Sat, 10 Oct 2020 19:21:35 +0000</lastBuildDate>
 	<sy:updatePeriod>

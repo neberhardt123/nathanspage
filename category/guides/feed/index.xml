@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Guides &#8211; Nathan Eberhardt</title>
-	<atom:link href="https://neberhardt123.github.io/nathanspage/category/guides/feed/" rel="self" type="application/rss+xml" />
-	<link>https://neberhardt123.github.io/nathanspage</link>
+	<atom:link href="http://nathaneberhardt.com/category/guides/feed/" rel="self" type="application/rss+xml" />
+	<link>http://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Sat, 10 Oct 2020 19:21:35 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,21 +21,21 @@
 	<generator>https://wordpress.org/?v=5.5.1</generator>
 
 <image>
-	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
+	<url>http://nathaneberhardt.com/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
 	<title>Guides &#8211; Nathan Eberhardt</title>
-	<link>https://neberhardt123.github.io/nathanspage</link>
+	<link>http://nathaneberhardt.com</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
 	<item>
 		<title>Windows Reconnaissance with CMD and PowerShell</title>
-		<link>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/</link>
-					<comments>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/#respond</comments>
+		<link>http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/</link>
+					<comments>http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/#respond</comments>
 		
 		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 20:07:26 +0000</pubDate>
 				<category><![CDATA[Guides]]></category>
-		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=14</guid>
+		<guid isPermaLink="false">http://nathaneberhardt.com/?p=14</guid>
 
 					<description><![CDATA[This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network. The...]]></description>
 										<content:encoded><![CDATA[
@@ -171,7 +171,7 @@ Cmdkey /list
 </pre>
 
 
-<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="https://neberhardt123.github.io/nathanspage/wp-admin/edit.php?post_type=post"></a></p>
+<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="http://nathaneberhardt.com/wp-admin/edit.php?post_type=post"></a></p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -446,7 +446,7 @@ Invoke-UserEventHunter
 <p>For more details on powersploit: <a href="https://powersploit.readthedocs.io/en/stable/Recon/README/" target="_blank" rel="noreferrer noopener">https://powersploit.readthedocs.io/en/stable/Recon/README/</a></p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/09/24/windows-reconnaissance-guide/feed/</wfw:commentRss>
+					<wfw:commentRss>http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

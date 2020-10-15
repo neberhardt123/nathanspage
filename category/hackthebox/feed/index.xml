@@ -9,8 +9,8 @@
 
 <channel>
 	<title>HackTheBox &#8211; Nathan Eberhardt</title>
-	<atom:link href="https://neberhardt123.github.io/nathanspage/category/hackthebox/feed/" rel="self" type="application/rss+xml" />
-	<link>https://neberhardt123.github.io/nathanspage</link>
+	<atom:link href="http://nathaneberhardt.com/category/hackthebox/feed/" rel="self" type="application/rss+xml" />
+	<link>http://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Sat, 10 Oct 2020 19:22:46 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,28 +21,28 @@
 	<generator>https://wordpress.org/?v=5.5.1</generator>
 
 <image>
-	<url>https://neberhardt123.github.io/nathanspage/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
+	<url>http://nathaneberhardt.com/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
 	<title>HackTheBox &#8211; Nathan Eberhardt</title>
-	<link>https://neberhardt123.github.io/nathanspage</link>
+	<link>http://nathaneberhardt.com</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
 	<item>
 		<title>HackTheBox &#8211; Buff</title>
-		<link>https://neberhardt123.github.io/nathanspage/2020/10/10/hackthebox-buff/</link>
-					<comments>https://neberhardt123.github.io/nathanspage/2020/10/10/hackthebox-buff/#respond</comments>
+		<link>http://nathaneberhardt.com/2020/10/10/hackthebox-buff/</link>
+					<comments>http://nathaneberhardt.com/2020/10/10/hackthebox-buff/#respond</comments>
 		
 		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Sat, 10 Oct 2020 19:22:46 +0000</pubDate>
 				<category><![CDATA[HackTheBox]]></category>
-		<guid isPermaLink="false">https://neberhardt123.github.io/nathanspage/?p=227</guid>
+		<guid isPermaLink="false">http://nathaneberhardt.com/?p=227</guid>
 
 					<description><![CDATA[[Writeup will become visible after the box becomes retired]]]></description>
 										<content:encoded><![CDATA[
 <p>[Writeup will become visible after the box becomes retired]</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>https://neberhardt123.github.io/nathanspage/2020/10/10/hackthebox-buff/feed/</wfw:commentRss>
+					<wfw:commentRss>http://nathaneberhardt.com/2020/10/10/hackthebox-buff/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
