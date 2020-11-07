@@ -12,7 +12,7 @@
 	<atom:link href="http://nathaneberhardt.com/author/user/feed/" rel="self" type="application/rss+xml" />
 	<link>http://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Sat, 10 Oct 2020 19:22:46 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 07 Nov 2020 02:15:53 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,6 +28,221 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker</title>
+		<link>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
+					<comments>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/#respond</comments>
+		
+		<dc:creator><![CDATA[Nathan]]></dc:creator>
+		<pubDate>Sat, 07 Nov 2020 02:15:53 +0000</pubDate>
+				<category><![CDATA[Guides]]></category>
+		<guid isPermaLink="false">http://nathaneberhardt.com/?p=382</guid>
+
+					<description><![CDATA[A project I worked on recently was to create a Minecraft server as cheap and efficiently as possible. If you do a quick google search, you&#8217;ll find that there are endless options when it comes to hosting Minecraft servers. However, many of the external hosting providers you will find are either very expensive or are...]]></description>
+										<content:encoded><![CDATA[
+<p>A project I worked on recently was to create a Minecraft server as cheap and efficiently as possible. If you do a quick google search, you&#8217;ll find that there are endless options when it comes to hosting Minecraft servers. However, many of the external hosting providers you will find are either very expensive or are low performance, so most people are stuck with hosting the server on their own personal computer via port forwarding. While researching cloud services, I found out on Microsoft&#8217;s website that they offered 100$ free credit for VPS services for students. </p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="690" height="226" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/2.png" alt="" class="wp-image-383" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/2.png 690w, http://nathaneberhardt.com/wp-content/uploads/2020/11/2-300x98.png 300w" sizes="(max-width: 690px) 100vw, 690px" /></figure>
+
+
+
+<p>In addition, other websites like Digital Ocean also offer free credit for anyone with an .edu email. For a Minecraft server, this is plenty of money to keep a VPS going, especially if you have friends who want to chip in some of their free credit as well. I thought that this would be a fun and interesting project to see how powerful I could make my server for the cheapest cost.</p>
+
+
+
+<p>To maximize resources and cost, choosing a Linux distro as the host OS is the way to go. I decided to run the server on Ubuntu 18.04 Server.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="883" height="827" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/5.png" alt="" class="wp-image-385" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/5.png 883w, http://nathaneberhardt.com/wp-content/uploads/2020/11/5-300x281.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/5-768x719.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
+
+
+
+<p>The best deal I could get for 4gb of RAM was 30$/month. Setting up the Virtual Machine was surprisingly easy and painless, and I&#8217;ll probably be using this VM for future projects/blogs.</p>
+
+
+
+<p>The next thing you need to consider is how you are going to connect/transfer files to your VPS after its been setup. For Windows Server, you would use RDP on port 3389, but in my case I&#8217;m using SSH with password authentication:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="478" height="387" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/7.png" alt="" class="wp-image-387" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/7.png 478w, http://nathaneberhardt.com/wp-content/uploads/2020/11/7-300x243.png 300w" sizes="(max-width: 478px) 100vw, 478px" /></figure>
+
+
+
+<p>If you already have the core files for your MC Server already installed, you can transfer the files to the vm with a command such as scp:</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+scp file user@[host/ip]:directory/targetfile
+</pre>
+
+
+<p>I also needed to download a couple of extra files, which you can perform with curl:</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+curl [URL/download link]
+</pre>
+
+
+<p>The next set of tasks I needed to accomplish was</p>
+
+
+
+<ol><li>Allow an inbound networking rule to allow port 25565 on TCP and UDP</li><li>Set the server up in a docker container for efficiency and performance</li></ol>
+
+
+
+<p>Exposing port 25565 on the VPS is a fairly simple task. You can access networking rules in the &#8220;Network Security Group&#8221; settings on the Azure Panel. </p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png" alt="" class="wp-image-388" width="853" height="374" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png 1024w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-300x132.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-768x337.png 768w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1536x674.png 1536w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12.png 1920w" sizes="(max-width: 853px) 100vw, 853px" /></figure>
+
+
+
+<p>By default, there will be an Implicit deny ACL as well as an ACL to allow SSH/RDP connections. Go ahead and add a new Inbound rule and add port 25565 as shown:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="587" height="845" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/13.png" alt="" class="wp-image-389" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/13.png 587w, http://nathaneberhardt.com/wp-content/uploads/2020/11/13-208x300.png 208w" sizes="(max-width: 587px) 100vw, 587px" /></figure>
+
+
+
+<p>After you complete this step, you can move on to the final steps for your server. For a fresh Ubuntu install, you will want to update your repositories, and install Java JRE 8.</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get update
+</pre>
+
+<pre class="brush: bash; title: ; notranslate">
+sudo apt install openjdk-8-jre
+</pre>
+
+
+<p>Once you&#8217;ve installed/transfered the files for your Minecraft server, you need to update the server.jar file with the proper server configurations and version number:</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+java -Xmx2048M -Xms1024M -jar server[VERSION].jar nogui 
+</pre>
+
+
+<p>For the java command listed above, -Xmx specifies the maximum RAM usage for the server, and -Xms specifies the minimum RAM usage. the nogui parameter specifies that we are not using a gui. We also need to accept the eula.txt, so nano/vim into the file and set it to true before you turn the server on.</p>
+
+
+
+<p>And that&#8217;s it! your free Minecraft server should be fully functional at this point, with minimal lag. I even tested this process with a modpack server and it worked perfectly. Optionally, you can run your Minecraft server in a docker container, which will treat the server as a service rather than a java file. If you want, you can follow the steps below to setup Docker</p>
+
+
+
+<p>I&#8217;m using Docker&#8217;s documentation for <a href="https://docs.docker.com/engine/install/ubuntu/">installing the Docker Engine on Ubuntu.</a> I&#8217;m not going to go into much detail with the commands, and you should probably follow the docs for a better explanation. However, I&#8217;ll be showing what I used in order to set this up properly.</p>
+
+
+
+<p><strong>Install packages to allow apt to use a repository over HTTPS:</strong></p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+</pre>
+
+
+<p><strong>Add Docker&#8217;s official GPG key:</strong></p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</pre>
+
+
+<p><strong>Verify that you now have the key with the fingerprint:</strong></p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-key fingerprint 0EBFCD88
+</pre>
+
+
+<p><strong>Setup a stable repository for Ubuntu amd64</strong></p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
+</pre>
+
+
+<p><strong>Install Docker Engine</strong></p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+</pre>
+
+
+<p>After we get those prerequisites out of the way, we can configure the Docker Image.</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+nano Dockerfile
+</pre>
+
+
+<p>Paste the following:</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+FROM java:8
+WORKDIR /app/
+ADD . /app/
+CMD java -Xmx2048M -Xms1024M -jar server[VERSION].jar nogui
+</pre>
+
+
+<p>Build the Docker image</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo docker build . --tag minecraftserver
+</pre>
+
+
+<p>Create a Docker volume</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo docker volume create servervolume
+</pre>
+
+
+<p>Run the docker image</p>
+
+
+<pre class="brush: bash; title: ; notranslate">
+sudo docker run -p 25565:25565 --mount source=servervolume,target=/app minecraftserver
+
+</pre>
+
+
+<p>You&#8217;re Minecraft server is now a successfully running service!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
 		<title>HackTheBox &#8211; Buff</title>
 		<link>http://nathaneberhardt.com/2020/10/10/hackthebox-buff/</link>
 					<comments>http://nathaneberhardt.com/2020/10/10/hackthebox-buff/#respond</comments>

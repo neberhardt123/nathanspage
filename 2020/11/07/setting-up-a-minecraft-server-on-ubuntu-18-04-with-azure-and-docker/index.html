@@ -7,12 +7,12 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
 	        <link rel="pingback" href="http://nathaneberhardt.com/xmlrpc.php">
 	    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-<title>Windows Reconnaissance with CMD and PowerShell &#8211; Nathan Eberhardt</title>
+<title>Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker &#8211; Nathan Eberhardt</title>
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Feed" href="http://nathaneberhardt.com/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Comments Feed" href="http://nathaneberhardt.com/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Windows Reconnaissance with CMD and PowerShell Comments Feed" href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Nathan Eberhardt &raquo; Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker Comments Feed" href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/" />
 		<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/nathaneberhardt.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
 			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
@@ -38,15 +38,14 @@ img.emoji {
 <link rel='stylesheet' id='font-awesome-css'  href='http://nathaneberhardt.com/wp-content/themes/thesimplest/assets/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
 <link rel='stylesheet' id='thesimplest-style-css'  href='http://nathaneberhardt.com/wp-content/themes/thesimplest/style.css?ver=5.5.3' type='text/css' media='all' />
 <script type='text/javascript' src='http://nathaneberhardt.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
-<link rel="https://api.w.org/" href="http://nathaneberhardt.com/wp-json/" /><link rel="alternate" type="application/json" href="http://nathaneberhardt.com/wp-json/wp/v2/posts/14" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://nathaneberhardt.com/xmlrpc.php?rsd" />
+<link rel="https://api.w.org/" href="http://nathaneberhardt.com/wp-json/" /><link rel="alternate" type="application/json" href="http://nathaneberhardt.com/wp-json/wp/v2/posts/382" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://nathaneberhardt.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nathaneberhardt.com/wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='History of Minecraft Survival Games and battle royale' href='http://nathaneberhardt.com/2020/09/24/mcsg/' />
-<link rel='next' title='HackTheBox &#8211; Buff' href='http://nathaneberhardt.com/2020/10/10/hackthebox-buff/' />
+<link rel='prev' title='HackTheBox &#8211; Buff' href='http://nathaneberhardt.com/2020/10/10/hackthebox-buff/' />
 <meta name="generator" content="WordPress 5.5.3" />
-<link rel="canonical" href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/" />
-<link rel='shortlink' href='http://nathaneberhardt.com/?p=14' />
-<link rel="alternate" type="application/json+oembed" href="http://nathaneberhardt.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fnathaneberhardt.com%2F2020%2F09%2F24%2Fwindows-reconnaissance-guide%2F" />
-<link rel="alternate" type="text/xml+oembed" href="http://nathaneberhardt.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fnathaneberhardt.com%2F2020%2F09%2F24%2Fwindows-reconnaissance-guide%2F&#038;format=xml" />
+<link rel="canonical" href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/" />
+<link rel='shortlink' href='http://nathaneberhardt.com/?p=382' />
+<link rel="alternate" type="application/json+oembed" href="http://nathaneberhardt.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fnathaneberhardt.com%2F2020%2F11%2F07%2Fsetting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://nathaneberhardt.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fnathaneberhardt.com%2F2020%2F11%2F07%2Fsetting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker%2F&#038;format=xml" />
 	<style id="thesimplest-custom-header-styles" type="text/css">
     .site-branding .site-title a,
     .site-description {
@@ -223,7 +222,7 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 }		</style>
 		
 </head>
-<body class="post-template-default single single-post postid-14 single-format-standard custom-background">
+<body class="post-template-default single single-post postid-382 single-format-standard custom-background">
     <div class="search-popup">
         <span class="search-popup-close"><i class="fa fa-times"></i></span>
         
@@ -280,440 +279,231 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 		<main id="main" class="site-main col-md-8 col-sm-12" role="main">
 
 			
-<article id="post-14" class="post-14 post type-post status-publish format-standard hentry category-guides">
+<article id="post-382" class="post-382 post type-post status-publish format-standard hentry category-guides">
 
 	<header class="entry-header">
-		<h1 class="entry-title">Windows Reconnaissance with CMD and PowerShell</h1>
+		<h1 class="entry-title">Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker</h1>
 		<div class="entry-info">
-			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-09-24T20:07:26+00:00">September 24, 2020</time><time class="updated" datetime="2020-10-10T19:21:35+00:00">October 10, 2020</time></span><span class="author-info"> by <a href="http://nathaneberhardt.com/author/user/">Nathan</a></span>		</div>
+			<span class="posted-on">Posted on <time class="entry-date published updated" datetime="2020-11-07T02:15:53+00:00">November 7, 2020</time></span><span class="author-info"> by <a href="http://nathaneberhardt.com/author/user/">Nathan</a></span>		</div>
 	</header>
 
 	
 	<div class="entry-content">
 		
-<p>This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network. </p>
+<p>A project I worked on recently was to create a Minecraft server as cheap and efficiently as possible. If you do a quick google search, you&#8217;ll find that there are endless options when it comes to hosting Minecraft servers. However, many of the external hosting providers you will find are either very expensive or are low performance, so most people are stuck with hosting the server on their own personal computer via port forwarding. While researching cloud services, I found out on Microsoft&#8217;s website that they offered 100$ free credit for VPS services for students. </p>
 
 
 
-<span id="more-14"></span>
+<figure class="wp-block-image size-large"><img loading="lazy" width="690" height="226" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/2.png" alt="" class="wp-image-383" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/2.png 690w, http://nathaneberhardt.com/wp-content/uploads/2020/11/2-300x98.png 300w" sizes="(max-width: 690px) 100vw, 690px" /></figure>
 
 
 
-<p>The more information you can collect about a system, the greater the chance of it becoming compromised. This guide will be useful for both the initial recon of a Windows system, as well as for post exploitation (especially if you only have access to a cli). I&#8217;ll be adding more to this guide as I learn more about Windows Server/workstations. In future blogs, I’ll be showcasing how you can use this gathered information to escalate privileges in the Domain.</p>
+<p>In addition, other websites like Digital Ocean also offer free credit for anyone with an .edu email. For a Minecraft server, this is plenty of money to keep a VPS going, especially if you have friends who want to chip in some of their free credit as well. I thought that this would be a fun and interesting project to see how powerful I could make my server for the cheapest cost.</p>
 
 
 
-<h2>Starting off</h2>
+<p>To maximize resources and cost, choosing a Linux distro as the host OS is the way to go. I decided to run the server on Ubuntu 18.04 Server.</p>
 
 
 
-<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
+<figure class="wp-block-image size-large"><img loading="lazy" width="883" height="827" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/5.png" alt="" class="wp-image-385" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/5.png 883w, http://nathaneberhardt.com/wp-content/uploads/2020/11/5-300x281.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/5-768x719.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Systeminfo 
+
+<p>The best deal I could get for 4gb of RAM was 30$/month. Setting up the Virtual Machine was surprisingly easy and painless, and I&#8217;ll probably be using this VM for future projects/blogs.</p>
+
+
+
+<p>The next thing you need to consider is how you are going to connect/transfer files to your VPS after its been setup. For Windows Server, you would use RDP on port 3389, but in my case I&#8217;m using SSH with password authentication:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="478" height="387" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/7.png" alt="" class="wp-image-387" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/7.png 478w, http://nathaneberhardt.com/wp-content/uploads/2020/11/7-300x243.png 300w" sizes="(max-width: 478px) 100vw, 478px" /></figure>
+
+
+
+<p>If you already have the core files for your MC Server already installed, you can transfer the files to the vm with a command such as scp:</p>
+
+
+<pre class="brush: bash; title: ; notranslate" title="">
+scp file user@[host/ip]:directory/targetfile
 </pre>
 
 
-<p>Displays detailed information and configurations of the computer and operating system.</p>
+<p>I also needed to download a couple of extra files, which you can perform with curl:</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Wmic
+<pre class="brush: bash; title: ; notranslate" title="">
+curl [URL/download link]
 </pre>
 
 
-<p>The wmic command provides a command line interface for Windows Instrumentation. Wmic will also not be logged by default audit policies and event logs. There’s a lot of info you can extract with this command, and some cool things you can do with it as well. Here are a few examples:</p>
+<p>The next set of tasks I needed to accomplish was</p>
 
 
 
-<div class="wp-block-group wmic-group has-white-background-color has-background"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
-wmic /output:c:os.html os get /format:hform
+<ol><li>Allow an inbound networking rule to allow port 25565 on TCP and UDP</li><li>Set the server up in a docker container for efficiency and performance</li></ol>
+
+
+
+<p>Exposing port 25565 on the VPS is a fairly simple task. You can access networking rules in the &#8220;Network Security Group&#8221; settings on the Azure Panel. </p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png" alt="" class="wp-image-388" width="853" height="374" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png 1024w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-300x132.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-768x337.png 768w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1536x674.png 1536w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12.png 1920w" sizes="(max-width: 853px) 100vw, 853px" /></figure>
+
+
+
+<p>By default, there will be an Implicit deny ACL as well as an ACL to allow SSH/RDP connections. Go ahead and add a new Inbound rule and add port 25565 as shown:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="587" height="845" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/13.png" alt="" class="wp-image-389" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/13.png 587w, http://nathaneberhardt.com/wp-content/uploads/2020/11/13-208x300.png 208w" sizes="(max-width: 587px) 100vw, 587px" /></figure>
+
+
+
+<p>After you complete this step, you can move on to the final steps for your server. For a fresh Ubuntu install, you will want to update your repositories, and install Java JRE 8.</p>
+
+
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo apt-get update
+</pre>
+
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo apt install openjdk-8-jre
 </pre>
 
 
-<p>Generates an OS/system report in HTML</p>
+<p>Once you&#8217;ve installed/transfered the files for your Minecraft server, you need to update the server.jar file with the proper server configurations and version number:</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-wmic logicaldisk where drivetype=3 get name, freespace, systemname, filesystem, size, volumeserialnumber
+<pre class="brush: bash; title: ; notranslate" title="">
+java -Xmx2048M -Xms1024M -jar server[VERSION].jar nogui 
 </pre>
 
 
-<p>Displays Hardrive info</p>
+<p>For the java command listed above, -Xmx specifies the maximum RAM usage for the server, and -Xms specifies the minimum RAM usage. the nogui parameter specifies that we are not using a gui. We also need to accept the eula.txt, so nano/vim into the file and set it to true before you turn the server on.</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-wmic STARTUP GET Caption, Command, User
+
+<p>And that&#8217;s it! your free Minecraft server should be fully functional at this point, with minimal lag. I even tested this process with a modpack server and it worked perfectly. Optionally, you can run your Minecraft server in a docker container, which will treat the server as a service rather than a java file. If you want, you can follow the steps below to setup Docker</p>
+
+
+
+<p>I&#8217;m using Docker&#8217;s documentation for <a href="https://docs.docker.com/engine/install/ubuntu/">installing the Docker Engine on Ubuntu.</a> I&#8217;m not going to go into much detail with the commands, and you should probably follow the docs for a better explanation. However, I&#8217;ll be showing what I used in order to set this up properly.</p>
+
+
+
+<p><strong>Install packages to allow apt to use a repository over HTTPS:</strong></p>
+
+
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
 </pre>
 
 
-<p>Finds programs/scripts that start on boot</p>
+<p><strong>Add Docker&#8217;s official GPG key:</strong></p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-wmic [useraccount/group/services] list
+<pre class="brush: bash; title: ; notranslate" title="">
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 </pre>
 
 
-<p>&nbsp;Gets info about users/groups/services</p>
+<p><strong>Verify that you now have the key with the fingerprint:</strong></p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Wmic qfe
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo apt-key fingerprint 0EBFCD88
 </pre>
 
 
-<p>Gets a list of updates on the windows machine</p>
-</div></div>
+<p><strong>Setup a stable repository for Ubuntu amd64</strong></p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Net
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
 </pre>
 
 
-<p>The net command manages many aspects of the network settings on a windows machine. Some uses:</p>
+<p><strong>Install Docker Engine</strong></p>
 
 
-
-<div class="wp-block-group net-groupcss has-white-background-color has-background"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
-Net [user/group]
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 </pre>
 
 
-<p>Lists all local and domain users/groups.</p>
+<p>After we get those prerequisites out of the way, we can configure the Docker Image.</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Net file
+<pre class="brush: bash; title: ; notranslate" title="">
+nano Dockerfile
 </pre>
 
 
-<p>Shows a list of open files on a server.</p>
+<p>Paste the following:</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Net share
+<pre class="brush: bash; title: ; notranslate" title="">
+FROM java:8
+WORKDIR /app/
+ADD . /app/
+CMD java -Xmx2048M -Xms1024M -jar server[VERSION].jar nogui
 </pre>
 
 
-<p>Lists/manages shared resources on the machine</p>
+<p>Build the Docker image</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Net start
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo docker build . --tag minecraftserver
 </pre>
 
 
-<p>Displays running services.</p>
-</div></div>
+<p>Create a Docker volume</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-qwinsta
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo docker volume create servervolume
 </pre>
 
 
-<p>Displays any users currently logged on. The “query session” command performs the same task.</p>
+<p>Run the docker image</p>
 
 
-<pre class="brush: plain; title: ; notranslate" title="">
-Cmdkey /list
+<pre class="brush: bash; title: ; notranslate" title="">
+sudo docker run -p 25565:25565 --mount source=servervolume,target=/app minecraftserver
+
 </pre>
 
 
-<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="http://nathaneberhardt.com/wp-admin/edit.php?post_type=post"></a></p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Icacls [path]
-</pre>
-
-
-<div class="wp-block-group icacls-group"><div class="wp-block-group__inner-container">
-<p>Gets permissions of the specified directory/file. Permissions are represented as uppercase letters in the output. Here is a quick overview of some of the permissions you will see:</p>
-
-
-
-<p><strong>Simple rights:</strong></p>
-
-
-
-<ul><li><strong>F</strong> (full access)</li><li><strong>M</strong> (modify access)</li><li><strong>RX</strong> (read and execute access)</li><li><strong>R</strong> (read-only access)</li><li><strong>W</strong> (write-only access)</li></ul>
-
-
-
-<p><strong>Inherited Rights (apply only to directories):</strong></p>
-
-
-
-<ul><li><strong>(OI)</strong>: object inherit</li><li><strong>(CI)</strong>: container inherit</li><li><strong>(IO)</strong>: inherit only</li><li><strong>(NP)</strong>: do not propagate inherit</li><li><strong>(I)</strong>: permission inherited from parent container</li></ul>
-
-
-
-<p>There are a list of other specific rights you can view on the microsoft docs. <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753525(v=ws.10)?redirectedfrom=MSDN" target="_blank">https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753525(v=ws.10)?redirectedfrom=MSDN</a></p>
-
-
-
-<p>The output can be verbose, so you can pipe the command into filters. Example:</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-icacls &quot;C:\Users\*&quot; | findstr &quot;(F)&quot; | findstr &quot;Everyone&quot;
-</pre>
-
-
-<p>This narrows down your search by piping the command into &#8220;findstr&#8221;, which filters the output to &#8220;Full&#8221; Permissions and the &#8220;Everyone&#8221; Group.</p>
-</div></div>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-schtasks /query
-</pre>
-
-
-<p>Looks for any scheduled tasks running on the machine.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-netsh
-</pre>
-
-
-<div class="wp-block-group netsh-group"><div class="wp-block-group__inner-container">
-<p>Network shell (netsh) is a command-line utility that allows you to configure and display the status of various network communications. I&#8217;ll only be going over a few examples of what you can do with this tool.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-netsh interface ip show config
-</pre>
-
-
-<p>Displays configurations for your network interfaces.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-netsh advfirewall firewall export [path]
-</pre>
-
-
-<p>Grabs firewall settings on the machine and exports to a file.</p>
-</div></div>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-reg query [key]
-</pre>
-
-
-<p>the reg command is used to display values of a registry key. Examples:</p>
-
-
-
-<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
-reg query HKEY_LOCAL_MACHINE\SOFTWARE
-</pre>
-
-
-<p>Returns installed software.</p>
-</div></div>
-
-
-
-<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
-reg query &quot;HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon&quot;
-</pre>
-
-
-<p>You can sometimes find default credentials in User Autologon</p>
-</div></div>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Nbtstat -a [IP]
-</pre>
-
-
-<p>Finds the NetBIOS name of an endpoint with the specified ip address.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-netstat -anob
-</pre>
-
-
-<p>Netstat displays connections for the current machine. You want to look for any listening connections that can be connected to remotely. Some of the ports may not be accessible externally, but portforwarding them can make them accessible.</p>
-
-
-
-<h2>Domain Recon with PowerShell</h2>
-
-
-
-<hr class="wp-block-separator is-style-wide"/>
-
-
-
-<p>There is a lot of useful domain information you can collect with powershell cmdlets.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-ADDomain [Server]
-</pre>
-
-
-<p>Gets info about the domain.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-ADGroup [Group]
-</pre>
-
-
-<p>Gets info about the domain groups or specified group.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-ADGroupMember [Group]
-</pre>
-
-
-<p>Gets info about the members of a Domain Group. Example:</p>
-
-
-
-<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container">
-<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
-Get-ADGroupMember &quot;Domain Admins&quot;
-</pre>
-
-
-<p>Get list of members in Domain Admins group.</p>
-</div></div>
-</div></div>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-ADComputer [Computer]
-</pre>
-
-
-<p>Get info about domain computers or a specified computer. Example:</p>
-
-
-
-<div class="wp-block-group termsrv-get"><div class="wp-block-group__inner-container">
-<div class="wp-block-group get-adcomputer"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
- Get-ADComputer -Filter {ServicePrincipalName -like “*TERMSRV*”}
-</pre>
-
-
-<p>Find all computers running RDP service</p>
-</div></div>
-</div></div>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-ADUser
-</pre>
-
-
-<p>Get info about domain users or a specified Domain user. Example:</p>
-
-
-
-<div class="wp-block-group spn-aduser"><div class="wp-block-group__inner-container">
-<div class="wp-block-group spn-aduser"><div class="wp-block-group__inner-container"><pre class="brush: plain; title: ; notranslate" title="">
-Get-ADUser -Filter {ServicePrincipalName -like “*”} 
-</pre>
-
-
-<p>Find Service Accounts by filtering by SPN.</p>
-</div></div>
-</div></div>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-GPO
-</pre>
-
-
-<p>Gets info about Group Policy Objects on the domain</p>
-
-
-
-<p>To take this a step further, you can use a PowerShell platform called powersploit, which is used for privilege escalation and reconnaissance of a Domain Controller. Here are some powersploit cmdlets you can use for recon.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-DomainDNSZone
-</pre>
-
-
-<p>Enumerates the Active Directory DNS zones for a given domain</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Get-NetGPOGroup
-</pre>
-
-
-<p>Finds a list of accounts with elevated privileges by scanning GPOs on the Domain.&nbsp;</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Invoke-UserHunter
-</pre>
-
-
-<p>Finds machines on the local domain where specified users are logged into, and can check if the current user has local admin access to the machines.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Invoke-FileFinder
-</pre>
-
-
-<p>Finds sensitive files on hosts by searching shared folders.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Find-InterestingFile
-</pre>
-
-
-<p>Searches a local or remote path for files with specific terms in the name.</p>
-
-
-<pre class="brush: plain; title: ; notranslate" title="">
-Invoke-UserEventHunter
-</pre>
-
-
-<p>&nbsp;Hunts for user logon events in domain controller event logs.</p>
-
-
-
-<p>For more details on powersploit: <a href="https://powersploit.readthedocs.io/en/stable/Recon/README/" target="_blank" rel="noreferrer noopener">https://powersploit.readthedocs.io/en/stable/Recon/README/</a></p>
+<p>You&#8217;re Minecraft server is now a successfully running service!</p>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer clearfix"><span class="cat-tags-links"><span class="cat-links"><span class="cat-icon"><i class="fa fa-folder-open"></i></span><span class="screen-reader-text">Categories</span><a href="http://nathaneberhardt.com/category/guides/" rel="category tag">Guides</a></span></span></footer></article>
 
 	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
 		<h2 class="screen-reader-text">Post navigation</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="http://nathaneberhardt.com/2020/09/24/mcsg/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">History of Minecraft Survival Games and battle royale</span></a></div><div class="nav-next"><a href="http://nathaneberhardt.com/2020/10/10/hackthebox-buff/" rel="next"><span class="meta-nav" aria-hidden="true">Next</span><span class="screen-reader-text">Next post:</span> <span class="post-title">HackTheBox &#8211; Buff</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="http://nathaneberhardt.com/2020/10/10/hackthebox-buff/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">HackTheBox &#8211; Buff</span></a></div></div>
 	</nav>
 <div id="comments" class="comments-area">
 
 	
 	
 		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/#respond" style="display:none;">Cancel reply</a></small></h3><form action="http://nathaneberhardt.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/#respond" style="display:none;">Cancel reply</a></small></h3><form action="http://nathaneberhardt.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
 <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
 <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
 <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='14' id='comment_post_ID' />
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='382' id='comment_post_ID' />
 <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
 </p></form>	</div><!-- #respond -->
 	
@@ -726,13 +516,13 @@ Invoke-UserEventHunter
 		<h4 class="widget-title">Recent Posts</h4>
 		<ul>
 											<li>
-					<a href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/">Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker</a>
+					<a href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/" aria-current="page">Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker</a>
 									</li>
 											<li>
 					<a href="http://nathaneberhardt.com/2020/10/10/hackthebox-buff/">HackTheBox &#8211; Buff</a>
 									</li>
 											<li>
-					<a href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/" aria-current="page">Windows Reconnaissance with CMD and PowerShell</a>
+					<a href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/">Windows Reconnaissance with CMD and PowerShell</a>
 									</li>
 											<li>
 					<a href="http://nathaneberhardt.com/2020/09/24/mcsg/">History of Minecraft Survival Games and battle royale</a>
@@ -771,7 +561,7 @@ Invoke-UserEventHunter
 </div><!-- site -->
 
 <script type='text/javascript' src='http://nathaneberhardt.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b' id='syntaxhighlighter-core-js'></script>
-<script type='text/javascript' src='http://nathaneberhardt.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b' id='syntaxhighlighter-brush-plain-js'></script>
+<script type='text/javascript' src='http://nathaneberhardt.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.9b' id='syntaxhighlighter-brush-bash-js'></script>
 <script type='text/javascript'>
 	(function(){
 		var corecss = document.createElement('link');

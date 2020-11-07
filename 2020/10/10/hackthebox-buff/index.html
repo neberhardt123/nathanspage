@@ -41,6 +41,7 @@ img.emoji {
 <link rel="https://api.w.org/" href="http://nathaneberhardt.com/wp-json/" /><link rel="alternate" type="application/json" href="http://nathaneberhardt.com/wp-json/wp/v2/posts/227" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://nathaneberhardt.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nathaneberhardt.com/wp-includes/wlwmanifest.xml" /> 
 <link rel='prev' title='Windows Reconnaissance with CMD and PowerShell' href='http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/' />
+<link rel='next' title='Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker' href='http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/' />
 <meta name="generator" content="WordPress 5.5.3" />
 <link rel="canonical" href="http://nathaneberhardt.com/2020/10/10/hackthebox-buff/" />
 <link rel='shortlink' href='http://nathaneberhardt.com/?p=227' />
@@ -87,9 +88,7 @@ body.custom-background { background-color: #c9c9c9; }
         padding: 3px 1em !important;
     }
 
-.wmic-group, .net-groupcss, .icacls-group, .netsh-group, .get-adcomputer, .termsrv-get,.spn-aduser {
-	padding-left:25px;
-}
+
 
 .site-description {
 	font-size:17px;
@@ -112,6 +111,9 @@ h1.entry-title {
 	border-top:1px solid #ccc;
 }
 /*
+ * .wmic-group, .net-groupcss, .icacls-group, .netsh-group, .get-adcomputer, .termsrv-get,.spn-aduser {
+	padding-left:25px;
+}
 .widget {
 	border-top:none;
 	border-bottom: 2px solid #f5f5f5;
@@ -171,16 +173,17 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 	
 }
 
-.widget {
-	background:white;
-}
+
 
 #masthead {
 	-webkit-box-shadow: 0 4px 6px -6px black;
 	   -moz-box-shadow: 0 4px 6px -6px black;
 	        box-shadow: 0 4px 6px -6px black;
 }
-
+.site-inner {
+	background:white;
+	background-image: url(http://nathaneberhardt.com/wp-content/uploads/2020/10/back-pattern.png)
+}
 #main {
 	background:white;
 	-webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
@@ -191,18 +194,14 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 #colophon {
 	margin-top:20px;
 }
-
-.site-inner {
-	background:white;
-	background-image: url(http://nathaneberhardt.com/wp-content/uploads/2020/10/back-pattern.png)
-}
 **/
+
+
 
 
 .post {
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 	padding:2em;
-
 	
 
 }
@@ -299,7 +298,7 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 
 	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
 		<h2 class="screen-reader-text">Post navigation</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">Windows Reconnaissance with CMD and PowerShell</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span><span class="screen-reader-text">Previous post:</span> <span class="post-title">Windows Reconnaissance with CMD and PowerShell</span></a></div><div class="nav-next"><a href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/" rel="next"><span class="meta-nav" aria-hidden="true">Next</span><span class="screen-reader-text">Next post:</span> <span class="post-title">Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker</span></a></div></div>
 	</nav>
 <div id="comments" class="comments-area">
 
@@ -323,6 +322,9 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 		<h4 class="widget-title">Recent Posts</h4>
 		<ul>
 											<li>
+					<a href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/">Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker</a>
+									</li>
+											<li>
 					<a href="http://nathaneberhardt.com/2020/10/10/hackthebox-buff/" aria-current="page">HackTheBox &#8211; Buff</a>
 									</li>
 											<li>
@@ -335,7 +337,8 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 
 		</section><section id="archives-2" class="widget widget_archive"><h4 class="widget-title">Archives</h4>
 			<ul>
-					<li><a href='http://nathaneberhardt.com/2020/10/'>October 2020</a></li>
+					<li><a href='http://nathaneberhardt.com/2020/11/'>November 2020</a></li>
+	<li><a href='http://nathaneberhardt.com/2020/10/'>October 2020</a></li>
 	<li><a href='http://nathaneberhardt.com/2020/09/'>September 2020</a></li>
 			</ul>
 
