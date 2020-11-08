@@ -7,11 +7,11 @@
 	>
 <channel>
 	<title>
-	Comments on: Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker	</title>
+	Comments on: Setting up a Minecraft Docker Server on Ubuntu 18.04 with Azure	</title>
 	<atom:link href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/" rel="self" type="application/rss+xml" />
 	<link>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Sat, 07 Nov 2020 02:15:53 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 08 Nov 2020 06:43:20 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>

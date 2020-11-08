@@ -12,7 +12,7 @@
 	<atom:link href="http://nathaneberhardt.com/feed/" rel="self" type="application/rss+xml" />
 	<link>http://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Sat, 07 Nov 2020 02:15:53 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 08 Nov 2020 06:43:20 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,7 +28,7 @@
 	<height>32</height>
 </image> 
 	<item>
-		<title>Setting up a Minecraft Server on Ubuntu 18.04 with Azure and Docker</title>
+		<title>Setting up a Minecraft Docker Server on Ubuntu 18.04 with Azure</title>
 		<link>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
 					<comments>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/#respond</comments>
 		
@@ -39,7 +39,7 @@
 
 					<description><![CDATA[A project I worked on recently was to create a Minecraft server as cheap and efficiently as possible. If you do a quick google search, you&#8217;ll find that there are endless options when it comes to hosting Minecraft servers. However, many of the external hosting providers you will find are either very expensive or are...]]></description>
 										<content:encoded><![CDATA[
-<p>A project I worked on recently was to create a Minecraft server as cheap and efficiently as possible. If you do a quick google search, you&#8217;ll find that there are endless options when it comes to hosting Minecraft servers. However, many of the external hosting providers you will find are either very expensive or are low performance, so most people are stuck with hosting the server on their own personal computer via port forwarding. While researching cloud services, I found out on Microsoft&#8217;s website that they offered 100$ free credit for VPS services for students. </p>
+<p>A project I worked on recently was to create a Minecraft server as cheap and efficiently as possible. If you do a quick google search, you&#8217;ll find that there are endless options when it comes to hosting Minecraft servers. However, many of the external hosting providers you will find are either very expensive or are low performance, so most people are stuck with hosting the server on their own personal computer via port forwarding. One option I considered for server hosting was using a dedicated VPS. An advantage to using a VPS is that you have full customization over the hardware and system components for your virtual machine. While researching cloud services, I found out on Microsoft&#8217;s website that they offered 100$ free credit for VPS services for students. </p>
 
 
 
@@ -47,7 +47,11 @@
 
 
 
-<p>In addition, other websites like Digital Ocean also offer free credit for anyone with an .edu email. For a Minecraft server, this is plenty of money to keep a VPS going, especially if you have friends who want to chip in some of their free credit as well. I thought that this would be a fun and interesting project to see how powerful I could make my server for the cheapest cost.</p>
+<p>In addition, other websites like Digital Ocean also offer free credit for anyone with an .edu email. I thought that this would be a fun and interesting project to see how powerful I could make my server for the cheapest cost. I also ended up deploying the server in a docker container for easier management, and to separate it from my other projects.</p>
+
+
+
+<h2 class="has-medium-font-size">Creating the VM</h2>
 
 
 
@@ -111,6 +115,10 @@ curl [URL/download link]
 
 
 
+<h2 class="has-medium-font-size">Setting up the server configurations</h2>
+
+
+
 <p>After you complete this step, you can move on to the final steps for your server. For a fresh Ubuntu install, you will want to update your repositories, and install Java JRE 8.</p>
 
 
@@ -143,7 +151,11 @@ java -Xmx2048M -Xms1024M -jar server[VERSION].jar nogui
 
 
 
-<p><strong>Install packages to allow apt to use a repository over HTTPS:</strong></p>
+<h2 class="has-medium-font-size">Deploying server in a docker container</h2>
+
+
+
+<p>Install packages to allow apt to use a repository over HTTPS:</p>
 
 
 <pre class="brush: bash; title: ; notranslate">
@@ -155,7 +167,7 @@ sudo apt-get install \
 </pre>
 
 
-<p><strong>Add Docker&#8217;s official GPG key:</strong></p>
+<p>Add Docker&#8217;s official GPG key:</p>
 
 
 <pre class="brush: bash; title: ; notranslate">
@@ -163,7 +175,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 </pre>
 
 
-<p><strong>Verify that you now have the key with the fingerprint:</strong></p>
+<p>Verify that you now have the key with the fingerprint:</p>
 
 
 <pre class="brush: bash; title: ; notranslate">
@@ -171,7 +183,7 @@ sudo apt-key fingerprint 0EBFCD88
 </pre>
 
 
-<p><strong>Setup a stable repository for Ubuntu amd64</strong></p>
+<p>Setup a stable repository for Ubuntu amd64</p>
 
 
 <pre class="brush: bash; title: ; notranslate">
@@ -182,7 +194,7 @@ sudo add-apt-repository \
 </pre>
 
 
-<p><strong>Install Docker Engine</strong></p>
+<p>Install Docker Engine</p>
 
 
 <pre class="brush: bash; title: ; notranslate">
