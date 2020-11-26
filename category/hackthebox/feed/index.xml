@@ -12,7 +12,7 @@
 	<atom:link href="http://nathaneberhardt.com/category/hackthebox/feed/" rel="self" type="application/rss+xml" />
 	<link>http://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Thu, 26 Nov 2020 07:38:10 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 26 Nov 2020 07:47:11 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -37,13 +37,17 @@
 				<category><![CDATA[HackTheBox]]></category>
 		<guid isPermaLink="false">http://nathaneberhardt.com/?p=227</guid>
 
-					<description><![CDATA[This is my first HackTheBox writeup, and I decided to write up on the &#8220;Buff&#8221; box that I did last month. It was a Windows OS machine with a difficult of &#8220;Easy&#8221;, so ****** As always we want to start with an nmap scan to check for open ports/services. The &#8220;sV&#8221; flag is to scan...]]></description>
+					<description><![CDATA[This is my first HackTheBox writeup, and I decided to write up on the &#8220;Buff&#8221; box that I did last month. It is a Windows OS machine with a difficulty of &#8220;Easy&#8221;, so it&#8217;s a good starting box for this series. User Flag: As always we want to start with an nmap scan to check...]]></description>
 										<content:encoded><![CDATA[
 <figure class="wp-block-image size-large"><img loading="lazy" width="708" height="438" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/thumb.png" alt="" class="wp-image-396" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/thumb.png 708w, http://nathaneberhardt.com/wp-content/uploads/2020/11/thumb-300x186.png 300w" sizes="(max-width: 708px) 100vw, 708px" /></figure>
 
 
 
-<p>This is my first HackTheBox writeup, and I decided to write up on the &#8220;Buff&#8221; box that I did last month. It was a Windows OS machine with a difficult of &#8220;Easy&#8221;, so ******</p>
+<p>This is my first HackTheBox writeup, and I decided to write up on the &#8220;Buff&#8221; box that I did last month. It is a Windows OS machine with a difficulty of &#8220;Easy&#8221;, so it&#8217;s a good starting box for this series.</p>
+
+
+
+<h2>User Flag:</h2>
 
 
 
@@ -172,6 +176,10 @@ C:\xampp\htdocs\gym\upload&gt; nc [attacking box ip]:4444
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="544" height="546" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/23.png" alt="" class="wp-image-445" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/23.png 544w, http://nathaneberhardt.com/wp-content/uploads/2020/11/23-300x300.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/23-150x150.png 150w" sizes="(max-width: 544px) 100vw, 544px" /></figure>
+
+
+
+<h2>Administrator/Root Flag:</h2>
 
 
 
