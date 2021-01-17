@@ -7,11 +7,11 @@
 	>
 <channel>
 	<title>
-	Comments on: Setting up a Minecraft Docker Server on Ubuntu 18.04 with Azure	</title>
-	<atom:link href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/" rel="self" type="application/rss+xml" />
-	<link>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
+	Comments on: HackTheBox &#8211; Worker	</title>
+	<atom:link href="http://nathaneberhardt.com/2021/01/17/hackthebox-worker/feed/" rel="self" type="application/rss+xml" />
+	<link>http://nathaneberhardt.com/2021/01/17/hackthebox-worker/</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Sun, 17 Jan 2021 09:00:48 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 17 Jan 2021 09:02:16 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>

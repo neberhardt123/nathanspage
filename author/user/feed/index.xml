@@ -12,7 +12,7 @@
 	<atom:link href="http://nathaneberhardt.com/author/user/feed/" rel="self" type="application/rss+xml" />
 	<link>http://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
-	<lastBuildDate>Thu, 26 Nov 2020 07:47:11 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 17 Jan 2021 09:02:16 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,6 +28,26 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>HackTheBox &#8211; Worker</title>
+		<link>http://nathaneberhardt.com/2021/01/17/hackthebox-worker/</link>
+					<comments>http://nathaneberhardt.com/2021/01/17/hackthebox-worker/#respond</comments>
+		
+		<dc:creator><![CDATA[Nathan]]></dc:creator>
+		<pubDate>Sun, 17 Jan 2021 09:02:16 +0000</pubDate>
+				<category><![CDATA[Guides]]></category>
+		<guid isPermaLink="false">http://nathaneberhardt.com/?p=452</guid>
+
+					<description><![CDATA[[Writeup will become visible after Worker is retired]]]></description>
+										<content:encoded><![CDATA[
+<p>[Writeup will become visible after Worker is retired]</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://nathaneberhardt.com/2021/01/17/hackthebox-worker/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
 		<title>Setting up a Minecraft Docker Server on Ubuntu 18.04 with Azure</title>
 		<link>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
 					<comments>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/#respond</comments>
@@ -95,7 +115,7 @@ curl [URL/download link]
 
 
 
-<ol><li>Allow an inbound networking rule to allow port 25565 on TCP and UDP</li><li>Set the server up in a docker container for efficiency and performance</li></ol>
+<ol><li>Allow an inbound networking rule to allow port 25565 on TCP and UDP</li><li>Set the server up in a docker container</li></ol>
 
 
 
