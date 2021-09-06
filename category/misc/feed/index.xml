@@ -8,9 +8,9 @@
 	>
 
 <channel>
-	<title>Misc &#8211; Nathan Eberhardt</title>
-	<atom:link href="http://nathaneberhardt.com/category/misc/feed/" rel="self" type="application/rss+xml" />
-	<link>http://nathaneberhardt.com</link>
+	<title>Misc &#8211; wutup  niggas</title>
+	<atom:link href="https://nathaneberhardt.com/category/misc/feed/" rel="self" type="application/rss+xml" />
+	<link>https://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Fri, 25 Sep 2020 21:57:44 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -18,24 +18,24 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.5.3</generator>
+	<generator>https://wordpress.org/?v=5.5.5</generator>
 
 <image>
-	<url>http://nathaneberhardt.com/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
-	<title>Misc &#8211; Nathan Eberhardt</title>
-	<link>http://nathaneberhardt.com</link>
+	<url>https://nathaneberhardt.com/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
+	<title>Misc &#8211; wutup  niggas</title>
+	<link>https://nathaneberhardt.com</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
 	<item>
 		<title>History of Minecraft Survival Games and battle royale</title>
-		<link>http://nathaneberhardt.com/2020/09/24/mcsg/</link>
-					<comments>http://nathaneberhardt.com/2020/09/24/mcsg/#respond</comments>
+		<link>https://nathaneberhardt.com/2020/09/24/mcsg/</link>
+					<comments>https://nathaneberhardt.com/2020/09/24/mcsg/#respond</comments>
 		
 		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 19:37:56 +0000</pubDate>
 				<category><![CDATA[Misc]]></category>
-		<guid isPermaLink="false">http://nathaneberhardt.com/?p=1</guid>
+		<guid isPermaLink="false">https://nathaneberhardt.com/?p=1</guid>
 
 					<description><![CDATA[Minecraft Hunger Games, a.k.a, Minecraft Survival Games is one of Minecraft&#8217;s most famous game modes of all time. Minecraft Hunger Games was founded in March 23, 2012, and was based on the popular &#8220;Hunger Games&#8221; movie that was released in early 2012. If you have no idea what Minecraft is, or even Hunger Games, let...]]></description>
 										<content:encoded><![CDATA[
@@ -47,7 +47,7 @@
 
 
 
-<figure class="wp-block-image size-full is-resized is-style-default"><img loading="lazy" src="http://nathaneberhardt.com/wp-content/uploads/2020/09/sg1.jpg" alt="SG-1" class="wp-image-155" width="585" height="328"/><figcaption>SG-1 Map</figcaption></figure>
+<figure class="wp-block-image size-full is-resized is-style-default"><img loading="lazy" src="https://nathaneberhardt.com/wp-content/uploads/2020/09/sg1.jpg" alt="SG-1" class="wp-image-155" width="585" height="328"/><figcaption>SG-1 Map</figcaption></figure>
 
 
 
@@ -74,7 +74,7 @@
 <p>Being a Minecraft Survival Games fan myself, I don&#8217;t necessarily consider the fall of MCSG as a a tragic event. Survival Games set the stage for what battle royale games would become and evolve into. It&#8217;s interesting to see how game developers have taken this mode into their own hands in order to entertain the lives of millions all over the world.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://nathaneberhardt.com/2020/09/24/mcsg/feed/</wfw:commentRss>
+					<wfw:commentRss>https://nathaneberhardt.com/2020/09/24/mcsg/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

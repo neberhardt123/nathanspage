@@ -8,14 +8,14 @@
 <channel>
 	<title>
 	Comments on: HackTheBox &#8211; Buff	</title>
-	<atom:link href="http://nathaneberhardt.com/2020/10/10/hackthebox-buff/feed/" rel="self" type="application/rss+xml" />
-	<link>http://nathaneberhardt.com/2020/10/10/hackthebox-buff/</link>
+	<atom:link href="https://nathaneberhardt.com/2020/10/10/hackthebox-buff/feed/" rel="self" type="application/rss+xml" />
+	<link>https://nathaneberhardt.com/2020/10/10/hackthebox-buff/</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Thu, 26 Nov 2020 07:47:11 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.5.3</generator>
+	<generator>https://wordpress.org/?v=5.5.5</generator>
 </channel>
 </rss>

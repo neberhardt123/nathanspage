@@ -8,9 +8,9 @@
 	>
 
 <channel>
-	<title>Guides &#8211; Nathan Eberhardt</title>
-	<atom:link href="http://nathaneberhardt.com/category/guides/feed/" rel="self" type="application/rss+xml" />
-	<link>http://nathaneberhardt.com</link>
+	<title>Guides &#8211; wutup  niggas</title>
+	<atom:link href="https://nathaneberhardt.com/category/guides/feed/" rel="self" type="application/rss+xml" />
+	<link>https://nathaneberhardt.com</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Sun, 17 Jan 2021 09:02:16 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -18,44 +18,44 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.5.3</generator>
+	<generator>https://wordpress.org/?v=5.5.5</generator>
 
 <image>
-	<url>http://nathaneberhardt.com/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
-	<title>Guides &#8211; Nathan Eberhardt</title>
-	<link>http://nathaneberhardt.com</link>
+	<url>https://nathaneberhardt.com/wp-content/uploads/2020/09/cropped-item-32x32.jpg</url>
+	<title>Guides &#8211; wutup  niggas</title>
+	<link>https://nathaneberhardt.com</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
 	<item>
 		<title>HackTheBox &#8211; Worker</title>
-		<link>http://nathaneberhardt.com/2021/01/17/hackthebox-worker/</link>
-					<comments>http://nathaneberhardt.com/2021/01/17/hackthebox-worker/#respond</comments>
+		<link>https://nathaneberhardt.com/2021/01/17/hackthebox-worker/</link>
+					<comments>https://nathaneberhardt.com/2021/01/17/hackthebox-worker/#respond</comments>
 		
 		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Sun, 17 Jan 2021 09:02:16 +0000</pubDate>
 				<category><![CDATA[Guides]]></category>
-		<guid isPermaLink="false">http://nathaneberhardt.com/?p=452</guid>
+		<guid isPermaLink="false">https://nathaneberhardt.com/?p=452</guid>
 
 					<description><![CDATA[[Writeup will become visible after Worker is retired]]]></description>
 										<content:encoded><![CDATA[
 <p>[Writeup will become visible after Worker is retired]</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://nathaneberhardt.com/2021/01/17/hackthebox-worker/feed/</wfw:commentRss>
+					<wfw:commentRss>https://nathaneberhardt.com/2021/01/17/hackthebox-worker/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Setting up a Minecraft Docker Server on Ubuntu 18.04 with Azure</title>
-		<link>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
-					<comments>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/#respond</comments>
+		<link>https://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
+					<comments>https://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/#respond</comments>
 		
 		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Sat, 07 Nov 2020 02:15:53 +0000</pubDate>
 				<category><![CDATA[Guides]]></category>
-		<guid isPermaLink="false">http://nathaneberhardt.com/?p=382</guid>
+		<guid isPermaLink="false">https://nathaneberhardt.com/?p=382</guid>
 
 					<description><![CDATA[A project I worked on recently was to create a Minecraft server as cheap and efficiently as possible. If you do a quick google search, you&#8217;ll find that there are endless options when it comes to hosting Minecraft servers. However, many of the external hosting providers you will find are either very expensive or are...]]></description>
 										<content:encoded><![CDATA[
@@ -63,7 +63,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="690" height="226" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/2.png" alt="" class="wp-image-383" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/2.png 690w, http://nathaneberhardt.com/wp-content/uploads/2020/11/2-300x98.png 300w" sizes="(max-width: 690px) 100vw, 690px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" width="690" height="226" src="https://nathaneberhardt.com/wp-content/uploads/2020/11/2.png" alt="" class="wp-image-383" srcset="https://nathaneberhardt.com/wp-content/uploads/2020/11/2.png 690w, https://nathaneberhardt.com/wp-content/uploads/2020/11/2-300x98.png 300w" sizes="(max-width: 690px) 100vw, 690px" /></figure>
 
 
 
@@ -79,7 +79,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="883" height="827" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/5.png" alt="" class="wp-image-385" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/5.png 883w, http://nathaneberhardt.com/wp-content/uploads/2020/11/5-300x281.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/5-768x719.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" width="883" height="827" src="https://nathaneberhardt.com/wp-content/uploads/2020/11/5.png" alt="" class="wp-image-385" srcset="https://nathaneberhardt.com/wp-content/uploads/2020/11/5.png 883w, https://nathaneberhardt.com/wp-content/uploads/2020/11/5-300x281.png 300w, https://nathaneberhardt.com/wp-content/uploads/2020/11/5-768x719.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
 
 
 
@@ -91,7 +91,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="478" height="387" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/7.png" alt="" class="wp-image-387" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/7.png 478w, http://nathaneberhardt.com/wp-content/uploads/2020/11/7-300x243.png 300w" sizes="(max-width: 478px) 100vw, 478px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" width="478" height="387" src="https://nathaneberhardt.com/wp-content/uploads/2020/11/7.png" alt="" class="wp-image-387" srcset="https://nathaneberhardt.com/wp-content/uploads/2020/11/7.png 478w, https://nathaneberhardt.com/wp-content/uploads/2020/11/7-300x243.png 300w" sizes="(max-width: 478px) 100vw, 478px" /></figure>
 
 
 
@@ -123,7 +123,7 @@ curl [URL/download link]
 
 
 
-<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png" alt="" class="wp-image-388" width="853" height="374" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png 1024w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-300x132.png 300w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-768x337.png 768w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12-1536x674.png 1536w, http://nathaneberhardt.com/wp-content/uploads/2020/11/12.png 1920w" sizes="(max-width: 853px) 100vw, 853px" /></figure>
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="https://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png" alt="" class="wp-image-388" width="853" height="374" srcset="https://nathaneberhardt.com/wp-content/uploads/2020/11/12-1024x450.png 1024w, https://nathaneberhardt.com/wp-content/uploads/2020/11/12-300x132.png 300w, https://nathaneberhardt.com/wp-content/uploads/2020/11/12-768x337.png 768w, https://nathaneberhardt.com/wp-content/uploads/2020/11/12-1536x674.png 1536w, https://nathaneberhardt.com/wp-content/uploads/2020/11/12.png 1920w" sizes="(max-width: 853px) 100vw, 853px" /></figure>
 
 
 
@@ -131,7 +131,7 @@ curl [URL/download link]
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="587" height="845" src="http://nathaneberhardt.com/wp-content/uploads/2020/11/13.png" alt="" class="wp-image-389" srcset="http://nathaneberhardt.com/wp-content/uploads/2020/11/13.png 587w, http://nathaneberhardt.com/wp-content/uploads/2020/11/13-208x300.png 208w" sizes="(max-width: 587px) 100vw, 587px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" width="587" height="845" src="https://nathaneberhardt.com/wp-content/uploads/2020/11/13.png" alt="" class="wp-image-389" srcset="https://nathaneberhardt.com/wp-content/uploads/2020/11/13.png 587w, https://nathaneberhardt.com/wp-content/uploads/2020/11/13-208x300.png 208w" sizes="(max-width: 587px) 100vw, 587px" /></figure>
 
 
 
@@ -269,20 +269,20 @@ sudo docker run -p 25565:25565 --mount source=servervolume,target=/app minecraft
 <p>You&#8217;re Minecraft server is now a successfully running service!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/</wfw:commentRss>
+					<wfw:commentRss>https://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Windows Reconnaissance with CMD and PowerShell</title>
-		<link>http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/</link>
-					<comments>http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/#respond</comments>
+		<link>https://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/</link>
+					<comments>https://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/#respond</comments>
 		
 		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Thu, 24 Sep 2020 20:07:26 +0000</pubDate>
 				<category><![CDATA[Guides]]></category>
-		<guid isPermaLink="false">http://nathaneberhardt.com/?p=14</guid>
+		<guid isPermaLink="false">https://nathaneberhardt.com/?p=14</guid>
 
 					<description><![CDATA[This guide covers the fundamentals of windows enumeration, system footprinting and other types of reconnaissance, as well as some useful cmd/powershell cmdlets I’ve picked up while competing in CCDC. For both blue team and red team, it&#8217;s critical to know the ins and outs of your systems to ensure optimal security of your network. The...]]></description>
 										<content:encoded><![CDATA[
@@ -418,7 +418,7 @@ Cmdkey /list
 </pre>
 
 
-<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="http://nathaneberhardt.com/wp-admin/edit.php?post_type=post"></a></p>
+<p>Displays a list of all user names and credentials that are stored in credential manager.<a href="https://nathaneberhardt.com/wp-admin/edit.php?post_type=post"></a></p>
 
 
 <pre class="brush: plain; title: ; notranslate">
@@ -693,7 +693,7 @@ Invoke-UserEventHunter
 <p>For more details on powersploit: <a href="https://powersploit.readthedocs.io/en/stable/Recon/README/" target="_blank" rel="noreferrer noopener">https://powersploit.readthedocs.io/en/stable/Recon/README/</a></p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/feed/</wfw:commentRss>
+					<wfw:commentRss>https://nathaneberhardt.com/2020/09/24/windows-reconnaissance-guide/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

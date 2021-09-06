@@ -8,14 +8,14 @@
 <channel>
 	<title>
 	Comments on: Setting up a Minecraft Docker Server on Ubuntu 18.04 with Azure	</title>
-	<atom:link href="http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/" rel="self" type="application/rss+xml" />
-	<link>http://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
+	<atom:link href="https://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/feed/" rel="self" type="application/rss+xml" />
+	<link>https://nathaneberhardt.com/2020/11/07/setting-up-a-minecraft-server-on-ubuntu-18-04-with-azure-and-docker/</link>
 	<description>InfoSec Blogs</description>
 	<lastBuildDate>Sun, 17 Jan 2021 09:00:48 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.5.3</generator>
+	<generator>https://wordpress.org/?v=5.5.5</generator>
 </channel>
 </rss>
