@@ -2,7 +2,7 @@
 <html lang="en-US">
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Log In &lsaquo; wutup  niggas &#8212; WordPress</title>
+	<title>Log In &lsaquo; Nathan Eberhardt &#8212; WordPress</title>
 	<link rel="dns-prefetch" href="//s.w.org">
 <link rel="stylesheet" id="dashicons-css" href="https://nathaneberhardt.com/wp-includes/css/dashicons.min.css?ver=5.5.5" type="text/css" media="all">
 <link rel="stylesheet" id="buttons-css" href="https://nathaneberhardt.com/wp-includes/css/buttons.min.css?ver=5.5.5" type="text/css" media="all">
@@ -55,7 +55,7 @@
 wp_attempt_focus();
 if ( typeof wpOnload === 'function' ) { wpOnload() }		</script>
 				<p id="backtoblog"><a href="https://nathaneberhardt.com/">
-		&larr; Back to wutup  niggas		</a></p>
+		&larr; Back to Nathan Eberhardt		</a></p>
 			</div>
 	<script type="text/javascript" src="https://nathaneberhardt.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" id="jquery-core-js"></script>
 <script type="text/javascript" id="zxcvbn-async-js-extra">
